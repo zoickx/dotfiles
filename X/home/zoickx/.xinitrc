@@ -1,8 +1,8 @@
 # basic status bar loop
-exec sh ~/.status.sh &
+sh ~/.status.sh &
 
 # set keyboard repeat delay and speed
-exec xset r rate 290 30 &
+xset r rate 290 30 &
 
 # (Swap Ctrl and CapsLock buttons)
 xmodmap ~/.Xmodmap &
