@@ -7,6 +7,7 @@ xset r rate 290 30 &
 # (Swap Ctrl and CapsLock buttons)
 xmodmap ~/.Xmodmap &
 
-exec owncloud &
-exec rslsync &
-exec dwm
+owncloud &
+telegram-desktop &
+aw-qt &
+dwm
