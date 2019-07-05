@@ -7,9 +7,9 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases, quality of life functions
 alias du="/usr/bin/du -h"
-alias l="exa --oneline --sort=type"
-alias la="exa --all --long --time-style=long-iso --sort=type"
 alias ls="exa --sort=type"
+alias l="exa --all --long --time-style=long-iso --sort=type"
+alias lt="exa --all --tree"
 lt() {
   if [ "$1" != "" ]
   then exa --all --time-style=long-iso --sort=type --tree --level=$1
