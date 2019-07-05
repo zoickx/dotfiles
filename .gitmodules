@@ -1,6 +1,3 @@
 [submodule "suckless-de"]
 	path = suckless-de
 	url = https://github.com/zoickx/suckless-de.git
-[submodule "emacs/home/zoickx/.emacs.d/emacsd"]
-	path = emacs/home/zoickx/.emacs.d/emacsd
-	url = https://github.com/zoickx/emacsd
