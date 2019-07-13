@@ -1,0 +1,17 @@
+#!/bin/bash
+# A simple script for a global inbox to put your ideas into
+
+bg="#1d1f21"
+fn="Fira Code:size=11"
+prompt="Quick Note:"
+inbox="${HOME}/org/api.org"
+
+function format_note {
+  note="** $note"
+}
+
+note=`echo | dmenu -p "$prompt" -sb "$bg" -nb "$bg" -fn "$fn"`
+if [ "$note" != "" ] ; then
+  format_note
+  echo "$note" >> $inbox
+fi
