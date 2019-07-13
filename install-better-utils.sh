@@ -1,1 +1,1 @@
-sudo pacman -Sy exa bat rg fd
+sudo pacman -Sy exa bat ripgrep fd
