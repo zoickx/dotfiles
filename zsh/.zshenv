@@ -1,4 +1,4 @@
-# nvim as in-terminal editor
+# emacs as in-terminal editor
 export EDITOR="/bin/emacs -nw"
 
 # add ~/.bin to PATH

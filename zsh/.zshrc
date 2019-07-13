@@ -10,13 +10,8 @@ alias du="/usr/bin/du -h"
 alias ls="exa --sort=type"
 alias l="exa --all --long --time-style=long-iso --sort=type"
 alias lt="exa --all --tree"
-lt() {
-  if [ "$1" != "" ]
-  then exa --all --time-style=long-iso --sort=type --tree --level=$1
-  else exa --all --time-style=long-iso --sort=type --tree --level=2
-  fi
-}
-cd() { builtin cd $1 && ls }
+
+cd() { builtin cd $1 && exa --sort=type }
 
 gcmount() { gocryptfs -i 15m $1 $2 }
 gcumount() { fusermount -u $1 }
