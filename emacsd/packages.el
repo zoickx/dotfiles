@@ -2,8 +2,18 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-(setq package-selected-packages '(org-bullets racer rust-mode company-coq proof-general magit which-key base16-theme smooth-scrolling ranger evil base16-theme))
-(package-install-selected-packages)
+(setq pkgs nil)
+(setq pkgs (append pkgs '(evil ranger smooth-scrolling))) ; sanity
+(setq pkgs (append pkgs '(magit which-key)))              ; QOL
+(setq pkgs (append pkgs '(base16-theme)))                 ; theme
+(setq pkgs (append pkgs '(proof-general company-coq)))    ; coq
+(setq pkgs (append pkgs '(racer rust-mode)))              ; rust
+(setq pkgs (append pkgs '(intero)))                       ; haskell
+(setq package-selected-packages pkgs)
+
+(unless package-archive-contents (progn
+                                   (package-refresh-contents)
+                                   (package-install-selected-packages)))
 
 ;; color theme
   (load-theme 'base16-google-dark t)
