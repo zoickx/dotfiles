@@ -10,12 +10,12 @@ alias du="/usr/bin/du -h"
 alias ls="exa --sort=type"
 alias l="exa --all --long --time-style=long-iso --sort=type"
 alias lt="exa --all --tree"
-
 cd() { builtin cd $1 && exa --sort=type }
 
-gcmount() { gocryptfs -i 15m $1 $2 }
-gcumount() { fusermount -u $1 }
-alias pac-autoremove="sudo pacman -Rnsc $(pacman -Qdtq)"
-ydlmp3() { youtube-dl --extract-audio --audio-format mp3 $1 }
-
 alias ed="emacs -nw"
+alias tmpfs="sudo mount -t tmpfs -o size=128m tmpfs"
+alias pac-autoremove="sudo pacman -Rnsc $(pacman -Qdtq)"
+
+ydlmp3()  { youtube-dl --extract-audio --audio-format mp3 $1 }
+gcmount()  { gocryptfs -i 15m $1 $2 }
+gcumount() { fusermount -u $1 }
