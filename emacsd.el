@@ -1,7 +1,28 @@
+; --- basics ---
+; default monospaced font
+(set-default-font "Iosevka-13")
+; no cursor blinkage
+(blink-cursor-mode 0)
+; no initial messages
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+(defun display-startup-echo-area-message () (message ""))
+; no bars
+(scroll-bar-mode 0)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+; backup in one place
+(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+; do not suspend on (probably accidental) C-z
+(global-unset-key (kbd "C-z"))
+
+
+; --- packages ---
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+;; packages to install
 (setq pkgs nil)
 (setq pkgs (append pkgs '(evil ranger smooth-scrolling))) ; sanity
 (setq pkgs (append pkgs '(magit which-key)))              ; QOL
@@ -9,8 +30,10 @@
 (setq pkgs (append pkgs '(proof-general company-coq)))    ; coq
 (setq pkgs (append pkgs '(racer rust-mode)))              ; rust
 (setq pkgs (append pkgs '(intero)))                       ; haskell
+(setq pkgs (append pkgs '(nix-mode)))                     ; nix
 (setq package-selected-packages pkgs)
 
+;; refresh and install packages on first run
 (unless package-archive-contents (progn
                                    (package-refresh-contents)
                                    (package-install-selected-packages)))
@@ -74,3 +97,7 @@
   (defun term-c-x-escape (&rest ignored)
     (term-set-escape-char 24))
   (advice-add 'term :after #'term-c-x-escape)
+
+
+; --- startup ---
+(ranger)

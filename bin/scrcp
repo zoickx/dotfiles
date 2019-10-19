@@ -1,0 +1,2 @@
+#!/bin/sh
+scrot -s /tmp/screenshot-`date +%F_%T`.png -e 'xclip -selection clipboard -t image/png < $f'
