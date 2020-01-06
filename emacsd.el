@@ -1,6 +1,6 @@
 ; --- basics ---
 ; default monospaced font
-(set-default-font "Iosevka-13")
+(set-default-font "Iosevka-14")
 ; no cursor blinkage
 (blink-cursor-mode 0)
 ; no initial messages
@@ -25,7 +25,7 @@
 ;; packages to install
 (setq pkgs nil)
 (setq pkgs (append pkgs '(evil ranger smooth-scrolling))) ; sanity
-(setq pkgs (append pkgs '(magit which-key)))              ; QOL
+(setq pkgs (append pkgs '(magit which-key sudo-edit)))    ; QOL
 (setq pkgs (append pkgs '(base16-theme)))                 ; theme
 (setq pkgs (append pkgs '(proof-general company-coq)))    ; coq
 (setq pkgs (append pkgs '(racer rust-mode)))              ; rust
@@ -81,6 +81,10 @@
   (add-hook 'coq-mode-hook 'company-coq-mode)
   (add-hook 'coq-mode-hook 'undo-tree-mode)
   (put 'company-coq-fold 'disabled nil)
+  ;; TODO: these should ideally go in [company-coq-mode] and [company-coq-map]
+  (with-eval-after-load 'coq-mode
+    (progn
+      (define-key coq-mode-map (kbd "C-c d") 'company-coq-diff-unification-error)))
 
 ;; rust + racer
   (add-hook 'rust-mode-hook 'racer-mode)
@@ -92,12 +96,8 @@
       (define-key rust-mode-map (kbd "TAB") 'company-indent-or-complete-common)
       (define-key rust-mode-map (kbd "C-c C-d") 'racer-describe)))
 
-;; term
-  ; use C-x as escape char
-  (defun term-c-x-escape (&rest ignored)
-    (term-set-escape-char 24))
-  (advice-add 'term :after #'term-c-x-escape)
-
+;; haskell
+  (add-hook 'haskell-mode-hook 'intero-mode)
 
 ; --- startup ---
 (ranger)
