@@ -25,9 +25,14 @@ do
   # minimal simple time format
   Time=$(date +%I:%M)
 
-
   # global ip if connected
   GIP=$(curl -s https://api.ipify.org)
+  GIPlen=${#GIP}
+  if [ $GIPlen -eq 0 ]; then
+      GIP="NIL"
+  elif [ $GIPlen -gt 20 ]; then
+      GIP="ERROR"
+  fi
 
   # set the status, rince, repeat
   xsetroot -name "[ $GIP | $Battery | $Time ]"
