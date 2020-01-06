@@ -1,0 +1,7 @@
+#!/bin/sh
+
+ARG=$1
+PATH=$(readlink -f $ARG)
+
+mkdir -p ~/.trash
+mv $PATH "~/.trash$PATH"
