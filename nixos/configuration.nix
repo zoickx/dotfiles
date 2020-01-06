@@ -10,6 +10,7 @@
       ./hardware-configuration.nix # hardware scan
       ./networks.nix               # wireless networks+passwords
     ];
+
   # supposedly better for SSDs
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
@@ -82,32 +83,24 @@
     let
       systray = pkgs.fetchurl {
         url = "https://dwm.suckless.org/patches/systray/dwm-systray-20190208-cb3f58a.diff";
-	sha256 = "2d1047ff0c5863f4188140ca1f405a558e94611e4eff2ff0fb5f70e32fddd44a";
+	      sha256 = "2d1047ff0c5863f4188140ca1f405a558e94611e4eff2ff0fb5f70e32fddd44a";
       };
       noborder = pkgs.fetchurl {
         url = "https://dwm.suckless.org/patches/noborder/dwm-noborder-6.2.diff";
-	sha256 = "9bbf5f963e5a2d23ae4b8731f0c179a8615de5715a2dbf683fbe02115e24efe0";
+	      sha256 = "9bbf5f963e5a2d23ae4b8731f0c179a8615de5715a2dbf683fbe02115e24efe0";
       };
       appearance = ./suckless/dwm-appearance.diff;
       layout     = ./suckless/dwm-layout.diff;
       behavior   = ./suckless/dwm-behavior.diff;
     in [systray noborder appearance layout behavior];
 
-
-  # DOES NOT WORK ?
-  ## autostart syncthing
-  #services.syncthing.user = "zoickx";
-  #services.syncthing.enable = true;
-
   # backlight buttons
   programs.light.enable = true;
   services.actkbd = {
     enable = true;
     bindings = [
-      { keys = [ 225 ]; events = [ "key" ];
-	command = "/run/current-system/sw/bin/light -A 10"; }
-      { keys = [ 224 ]; events = [ "key" ];
-      command = "/run/current-system/sw/bin/light -U 10"; }
+      { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+      { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
     ];
   };
 
