@@ -46,16 +46,24 @@
     interfaces.wlp5s0.useDHCP = true;
   };
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "zoickx" ];
+
   time.timeZone = "EET";
 
   environment.systemPackages = with pkgs; [
-    neovim emacs
-    zsh ripgrep fd bat exa
-    git unzip
-    any-nix-shell # for zsh in [nix-shell]
-    firefox dmenu owncloud-client
-    iosevka
+     dwm st dmenu home-manager
   ];
+
+  fonts = {
+    enableDefaultFonts = false;
+    fonts = with pkgs; [ iosevka-bin fira ];
+    fontconfig.defaultFonts = {
+      monospace = [ "Iosevka" ];
+      sansSerif = [ "Fira Sans" ];
+      serif     = [ "Fira Sans" ];
+    };
+  };
 
   nixpkgs.config.st.patches =
     let
