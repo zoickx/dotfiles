@@ -149,8 +149,10 @@
   users.users.zoickx = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
   };
+  # sudo on all commands for zoickx
+  security.sudo.extraRules = [ { commands = [ "ALL" ]; users = [ "zoickx" ]; } ];
+
   # autologin (encrypted anyway)
   services.mingetty.autologinUser = "zoickx";
 
