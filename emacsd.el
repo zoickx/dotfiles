@@ -46,6 +46,7 @@
 
 ;; ranger
   (global-set-key (kbd "C-x C-r") 'ranger)
+  (setq ranger-excluded-extensions '("gpg")) ; do not try to decrypt for preview
 
 ;; evil
   ;order is important here
@@ -54,6 +55,10 @@
   (require 'evil)
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (evil-mode 1)
+
+;; GPG
+  (setq epa-pinentry-mode 'loopback)
+  (setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
 ;; magit
   (global-set-key (kbd "C-x C-m") 'magit-status)
