@@ -6,10 +6,10 @@
     gnome3.dconf # [home-manager switch] does not work without this for some reason
     
     # these will not hurt
-    git scrot xclip htop srm bc file ffmpeg killall zip unzip
+    git scrot xclip htop srm bc file ffmpeg killall zip unzip ntfs3g
 
     # better utils
-    zsh ripgrep fd bat exa
+    zsh ripgrep fd bat exa dua
 
     # use zsh in nix-shell
     any-nix-shell
@@ -23,13 +23,13 @@
     libreoffice redshift
 
     # cli apps
-    youtube-dl lf
+    youtube-dl gnupg
 
     # encryption
     gocryptfs veracrypt cryfs
 
     # OPAM
-    opam gnum4 glibc_multi               # OPAM
+    opam gnum4 glibc_multi
 
     # misc dev
     gcc gnumake stack
