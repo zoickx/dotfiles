@@ -41,7 +41,7 @@
   home.file.".config/bat/syntaxes/Coq.sublime-syntax" = {
     source = pkgs.fetchurl {
       url = "https://raw.githubusercontent.com/whitequark/Sublime-Coq/master/Coq.sublime-syntax";
-      sha256 = "84da58d74b7a44353324afe3a6d10e6266e3438698984916a5de47e1b4c23ea2";
+      sha256 = "989c7f48c88867f0080f1458df5949f98af1f1ee8c23c8a7e2b256fb15e3243b";
     };
     onChange = "bat cache --build";
   };
