@@ -90,6 +90,7 @@
   (setq org-archive-save-context-info '(time file))
 
 ;; proof general + company-coq
+  (setq coq-smie-user-tokens '(("≈" . "=") ("≡" . "="))) ; proper indentation for equivalence symbols
   (setq proof-splash-enable nil)
   (add-hook 'coq-mode-hook 'company-coq-mode)
   (add-hook 'coq-mode-hook 'undo-tree-mode)
@@ -98,6 +99,15 @@
   (with-eval-after-load 'coq-mode
     (progn
       (define-key coq-mode-map (kbd "C-c d") 'company-coq-diff-unification-error)))
+  ; I do not understand how this works,
+  ; but it changes the repective backgrounds in Proof General
+  ; taken from [https://github.com/ejgallego/pruf-general]
+  (custom-set-faces
+   '(proof-queue-face
+     ((((type x) (class color) (background dark)) (:background "dark slate gray"))) t)
+   '(proof-locked-face
+     ((((type x) (class color) (background dark)) (:background "gray10"))) t))
+
 
 ;; rust + racer
   (add-hook 'rust-mode-hook 'racer-mode)
