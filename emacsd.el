@@ -62,19 +62,27 @@
   (which-key-mode)
 
 ;; org-mode
-  ; sane indentation for lists
   (setq org-startup-indented t)
-  ; symbol to be shown over headings with content
   (setq org-ellipsis "ˇ")
-  ; add timestamps for task completion
   (setq org-log-done 'time)
-  ; allow whitespace between items
   (setq org-cycle-separator-lines -1)
-  ; directory org-todos are gathered from)
-  (setq org-agenda-files '("~/org/project"))
+  (setq org-agenda-files '("~/org"))
+  (setq org-blank-before-new-entry
+        '((heading . nil) (plain-list-item . nil)))
 
+  ; todo keywords
+  (setq org-todo-keywords
+	'((sequence "TODO" "CURR" "|" "DONE")
+	  (sequence "|" "FAIL")))
+  (setq org-todo-keyword-faces
+        '(("CURR" . (:foreground "orange" :weight bold :background "gray16"))
+          ("FAIL" . (:foreground "black" :background "gray20"))))
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c C-<return>") 'org-todo))
+
+  ; archival
+  (setq org-archive-location "~/org/amygdala/org-archive.org::")
+  (setq org-archive-save-context-info '(time file))
 
 ;; proof general + company-coq
   (setq proof-splash-enable nil)
