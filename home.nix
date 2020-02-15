@@ -113,6 +113,9 @@
     '';
 
     profileExtra = ''
+      # mount org directory
+      gocryptfs -passfile $HOME/.config/org-gocrypfs-passfile NX/org org
+
       if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
         startx $HOME/dotfiles/xinitrc &> $HOME/.local/share/startx.log
       fi
