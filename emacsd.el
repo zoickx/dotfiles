@@ -29,8 +29,9 @@
 (setq pkgs (append pkgs '(base16-theme)))                 ; theme
 (setq pkgs (append pkgs '(proof-general company-coq)))    ; coq
 (setq pkgs (append pkgs '(racer rust-mode)))              ; rust
-(setq pkgs (append pkgs '(intero)))                       ; haskell
 (setq pkgs (append pkgs '(nix-mode)))                     ; nix
+(setq pkgs (append pkgs '(dante)))                        ; haskell
+(setq pkgs (append pkgs '(tuareg merlin)))                ; ocaml
 (setq package-selected-packages pkgs)
 
 ;; refresh and install packages on first run
@@ -121,6 +122,16 @@
 
 ;; haskell
   (add-hook 'haskell-mode-hook 'intero-mode)
+
+;; ocaml merlin
+  (autoload 'merlin-mode "merlin" "Merlin mode" t)
+  (add-hook 'tuareg-mode-hook 'merlin-mode)
+  (add-hook 'caml-mode-hook 'merlin-mode)
+  ;; TODO: fix this
+  ; (with-eval-after-load 'merlin-mode
+  ;   (progn
+  ;     (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
+  ;     (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)))
 
 ; --- startup ---
 (ranger)
