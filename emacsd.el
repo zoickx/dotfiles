@@ -76,6 +76,10 @@
   (setq org-blank-before-new-entry
         '((heading . nil) (plain-list-item . nil)))
 
+  ; habit tracking
+  (require 'org)
+  (add-to-list 'org-modules 'org-habit t)
+
   ; todo keywords
   (setq org-todo-keywords
 	'((sequence "TODO" "CURR" "|" "DONE")
