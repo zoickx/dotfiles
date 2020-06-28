@@ -104,13 +104,13 @@
     ];
   };
 
-  # CUPS
-  services.printing.enable = true;
+  # ADB
+  programs.adb.enable = true;
+  users.users.zoickx.extraGroups = ["adbusers"];
 
   # sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
 
   # bluetooth
   hardware.bluetooth.enable = true;
