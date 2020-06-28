@@ -6,7 +6,7 @@
     gnome3.dconf # [home-manager switch] does not work without this for some reason
     
     # these will not hurt
-    git scrot xclip htop srm bc file ffmpeg killall zip unzip ntfs3g
+    git scrot xclip htop srm file killall p7zip ntfs3g
 
     # better utils
     zsh ripgrep fd bat exa dua
@@ -19,20 +19,23 @@
 
     # gui apps
     firefox vlc pavucontrol tdesktop signal-desktop bleachbit gthumb
-    inkscape libreoffice transmission-gtk owncloud-client xarchiver
-    libreoffice redshift
+    libreoffice transmission-gtk owncloud-client xarchiver
+    redshift
 
     # cli apps
-    youtube-dl gnupg
+    youtube-dl gnupg sshfs bind jmtpfs ffmpeg
 
     # encryption
     gocryptfs veracrypt cryfs
 
     # OPAM
-    opam gnum4 glibc_multi
+    opam gnum4 glibc_multi llvmPackages.bintools
 
     # misc dev
-    gcc gnumake stack
+    gcc gnumake graphviz
+
+    # DOOM
+    gzdoom
   ];
 
   home.file.".emacs.d/init.el".source = ~/dotfiles/emacsd.el;
@@ -48,6 +51,7 @@
 
   gtk = {
     enable = true;
+    font.package = pkgs.fira;
     font.name = "Fira Sans 11";
     iconTheme = {
       name = "Papirus-Dark";
@@ -113,8 +117,7 @@
     '';
 
     profileExtra = ''
-      # mount org directory
-      gocryptfs -passfile $HOME/.config/org-gocrypfs-passfile NX/org org
+      gocryptfs -passfile ~/.config/org-passfile 'Syncthing/[C]org' 'org'
 
       if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
         startx $HOME/dotfiles/xinitrc &> $HOME/.local/share/startx.log
