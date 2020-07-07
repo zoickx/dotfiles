@@ -18,8 +18,8 @@
     neovim emacs
 
     # gui apps
-    firefox vlc pavucontrol tdesktop signal-desktop bleachbit gthumb
-    libreoffice transmission-gtk owncloud-client xarchiver
+    firefox vlc pavucontrol tdesktop signal-desktop gthumb
+    transmission-gtk nextcloud-client xarchiver
     redshift
 
     # cli apps
@@ -36,6 +36,12 @@
 
     # DOOM
     gzdoom
+
+    # TeX
+    texlive.combined.scheme-medium
+
+    # VPN (wireguard rly)
+    mullvad-vpn
   ];
 
   home.file.".emacs.d/init.el".source = ~/dotfiles/emacsd.el;
