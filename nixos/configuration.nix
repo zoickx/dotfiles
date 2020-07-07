@@ -24,14 +24,11 @@
 
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.luks.devices = [
-      {
-        name = "rootfs";
-        device = "/dev/nvme0n1p2";
-        preLVM = true;
-        allowDiscards = true;
-      }
-    ];
+    initrd.luks.devices.rootfs = {
+      device = "/dev/nvme0n1p2";
+      preLVM = true;
+      allowDiscards = true;
+    };
   };
 
   networking = {
@@ -47,14 +44,14 @@
     interfaces.wlp5s0.useDHCP = true;
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "zoickx" ];
-
   time.timeZone = "EET";
 
   environment.systemPackages = with pkgs; [
      dwm st dmenu home-manager
   ];
+
+  # required to make [nextcloud-client] remember login; doesn't seem to work per-user
+  services.gnome3.gnome-keyring.enable = true;
 
   fonts = {
     enableDefaultFonts = false;
@@ -122,17 +119,30 @@
 
     layout = "us,ru,ua";
     xkbOptions = "ctrl:swapcaps,grp:shifts_toggle";
-
-    libinput.enable = true;
-    libinput.tapping = true;
-    libinput.naturalScrolling = true;
-
-    libinput.accelProfile = "flat";
+    
+    libinput = {
+      enable = true;
+      tapping = true;
+      naturalScrolling = true;
+      accelProfile = "flat";
+      additionalOptions = ''MatchIsTouchpad "on"'';
+    };
+    
+    ## there is a problem with mouse wheel vs touchpad scrolling direction in 20.03: https://github.com/NixOS/nixpkgs/issues/75007
+    ## this is a workaround
+    extraConfig = ''
+      Section "InputClass"
+        Identifier "mouse"
+        Driver "libinput"
+        MatchProduct "Mouse"
+        Option "AccelProfile" "flat"
+        Option "NaturalScrolling" "off"
+      EndSection
+    '';
 
     windowManager.dwm.enable = true;
-    windowManager.default = "dwm";
     desktopManager.xterm.enable = false;
-    desktopManager.default = "none";
+    displayManager.defaultSession = "none+dwm";
     displayManager.startx.enable = true;
   };
 
@@ -153,6 +163,6 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "19.09"; # Did you read the comment?
+  system.stateVersion = "20.03"; # Did you read the comment?
 
 }
