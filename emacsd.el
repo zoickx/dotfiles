@@ -140,7 +140,7 @@
       (define-key rust-mode-map (kbd "C-c C-d") 'racer-describe)))
 
 ;; haskell
-  (add-hook 'haskell-mode-hook 'intero-mode)
+  (add-hook 'haskell-mode-hook 'dante-mode)
 
 ;; ocaml merlin
   (autoload 'merlin-mode "merlin" "Merlin mode" t)
