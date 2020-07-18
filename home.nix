@@ -129,7 +129,7 @@
     '';
 
     profileExtra = ''
-      gocryptfs -passfile ~/.config/org-passfile 'Syncthing/[C]org' 'org'
+      gocryptfs -passfile ~/.config/org-passfile 'NX/[C]org' 'org'
 
       if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
         startx $HOME/dotfiles/xinitrc &> $HOME/.local/share/startx.log
