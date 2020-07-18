@@ -113,6 +113,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+
   # X11
   services.xserver = {
     enable = true;
