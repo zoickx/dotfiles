@@ -32,6 +32,7 @@
 (setq pkgs (append pkgs '(nix-mode)))                     ; nix
 (setq pkgs (append pkgs '(dante)))                        ; haskell
 (setq pkgs (append pkgs '(tuareg merlin)))                ; ocaml
+(setq pkgs (append pkgs '(markdown-mode)))                ; md
 (setq package-selected-packages pkgs)
 
 ;; refresh and install packages on first run
@@ -56,6 +57,18 @@
   (require 'evil)
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (evil-mode 1)
+  ; custom functions to make [j] [k] work nicely with both wrapped lines
+  ; courtesy of [https://github.com/emacs-evil/evil/issues/817]
+  (evil-define-motion my-evil-previous-line (count)
+    :type line
+    (let ((command (if count 'evil-previous-line 'evil-previous-visual-line)))
+      (funcall command (prefix-numeric-value count))))
+  (evil-define-motion my-evil-next-line (count)
+    :type line
+    (let ((command (if count 'evil-next-line 'evil-next-visual-line)))
+      (funcall command (prefix-numeric-value count))))
+  (define-key evil-motion-state-map (kbd "k") 'my-evil-previous-line)
+  (define-key evil-motion-state-map (kbd "j") 'my-evil-next-line)
 
 ;; GPG
   (setq epa-pinentry-mode 'loopback)
@@ -136,6 +149,19 @@
   ;   (progn
   ;     (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
   ;     (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)))
+
+;; markdown
+  (add-to-list 'auto-mode-alist '("\\.page\\'" . markdown-mode))
+
+;; 80-column rule rules
+  ; auto-reflow to 80 by default
+  (setq-default fill-column 80)
+  ; [whitespace-mode] will highlight lines over 80
+  (setq-default
+   whitespace-line-column 80
+   whitespace-style       '(face lines-tail))
+
+
 
 ; --- startup ---
 (ranger)
