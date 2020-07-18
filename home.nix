@@ -3,6 +3,8 @@
 {
 
   home.packages = with pkgs; [
+    # utils
+    pandoc
     gnome3.dconf # [home-manager switch] does not work without this for some reason
     
     # these will not hurt
@@ -20,29 +22,33 @@
     # gui apps
     firefox vlc pavucontrol tdesktop signal-desktop gthumb
     transmission-gtk nextcloud-client xarchiver
-    redshift
+    redshift anki
 
     # cli apps
     youtube-dl gnupg sshfs bind jmtpfs ffmpeg
+    exercism
 
     # encryption
     gocryptfs veracrypt cryfs
 
     # OPAM
-    opam gnum4 glibc_multi llvmPackages.bintools
+    opam gnum4 glibc_multi
 
     # misc dev
-    gcc gnumake graphviz
+    gcc gnumake
+    graphviz
+    stack
 
     # DOOM
     gzdoom
-
-    # TeX
-    texlive.combined.scheme-medium
-
-    # VPN (wireguard rly)
-    mullvad-vpn
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "Ilia Zaichuk";
+    userEmail = "zoickx@ztld.org";
+    extraConfig = { pull.rebase = true; };
+  };
 
   home.file.".emacs.d/init.el".source = ~/dotfiles/emacsd.el;
 
