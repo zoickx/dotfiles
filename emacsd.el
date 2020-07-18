@@ -15,6 +15,8 @@
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
 ; do not suspend on (probably accidental) C-z
 (global-unset-key (kbd "C-z"))
+; show current column
+(column-number-mode 1)
 
 
 ; --- packages ---
@@ -124,7 +126,7 @@
    '(proof-queue-face
      ((((type x) (class color) (background dark)) (:background "dark slate gray"))) t)
    '(proof-locked-face
-     ((((type x) (class color) (background dark)) (:background "gray10"))) t))
+     ((((type x) (class color) (background dark)) (:background "gray8"))) t))
 
 
 ;; rust + racer
