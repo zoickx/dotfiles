@@ -138,6 +138,7 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
       ed = "emacs-nox";
       tmpfs = "sudo mount -t tmpfs -o size=128m tmpfs";
       ydlmp3 = "youtube-dl --extract-audio --audio-format mp3";
+      killall = "echo 'No. Use pkill instead.'";
 
       now = ''
         date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z;
@@ -150,7 +151,6 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
     initExtra = ''
       # complex aliases
       cd() { builtin cd $1 && exa --sort=type }
-      calc() { echo $1 | bc }
     '';
 
     profileExtra = ''
