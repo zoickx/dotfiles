@@ -67,6 +67,10 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
 
   home.file.".emacs.d/init.el".source = ~/dotfiles/emacsd.el;
 
+  ## TODO (1): this simply doesn't work - can't install unfree before this, but can't run this w/o installing unfree
+  ## TODO (2): allow on a per-package basis, not globally
+  #home.file.".config/nixpkgs/config.nix".text = "{ AllowUnfree = true; }";
+
   # bat syntaxes
   home.file.".config/bat/syntaxes/Coq.sublime-syntax" = {
     source = pkgs.fetchurl {
@@ -95,6 +99,12 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
     size = 16;
     package = pkgs.paper-icon-theme;
   };
+
+  ## TODO: this can't work - the tarball needs to be fetched before it can be fetched
+  #programs.home-manager = {
+  #  enable = true;
+  #  path = fetchTarball "https://github.com/rycee/home-manager/tarball/release-20.03";
+  #};
 
   programs.zsh = {
     enable = true;
