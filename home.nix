@@ -113,7 +113,7 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ "git" "colored-man-pages" ];
       theme = "lambda";
     };
 
