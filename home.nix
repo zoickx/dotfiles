@@ -62,7 +62,10 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
     enable = true;
     userName = "Ilia Zaichuk";
     userEmail = "zoickx@ztld.org";
-    extraConfig = { pull.rebase = true; };
+    extraConfig = {
+      pull.rebase = true;
+      core.editor = "nvim";
+    };
   };
 
   home.file.".emacs.d/init.el".source = ~/dotfiles/emacsd.el;
