@@ -32,7 +32,6 @@
 (setq pkgs (append pkgs '(proof-general company-coq)))    ; coq
 (setq pkgs (append pkgs '(racer rust-mode)))              ; rust
 (setq pkgs (append pkgs '(nix-mode)))                     ; nix
-(setq pkgs (append pkgs '(dante)))                        ; haskell
 (setq pkgs (append pkgs '(tuareg merlin)))                ; ocaml
 (setq pkgs (append pkgs '(markdown-mode)))                ; md
 (setq package-selected-packages pkgs)
@@ -59,7 +58,7 @@
   (require 'evil)
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (evil-mode 1)
-  ; custom functions to make [j] [k] work nicely with both wrapped lines
+  ; custom functions to make [j] [k] work nicely with both wrapped lines and motions
   ; courtesy of [https://github.com/emacs-evil/evil/issues/817]
   (evil-define-motion my-evil-previous-line (count)
     :type line
@@ -139,9 +138,6 @@
       (define-key rust-mode-map (kbd "TAB") 'company-indent-or-complete-common)
       (define-key rust-mode-map (kbd "C-c C-d") 'racer-describe)))
 
-;; haskell
-  (add-hook 'haskell-mode-hook 'dante-mode)
-
 ;; ocaml merlin
   (autoload 'merlin-mode "merlin" "Merlin mode" t)
   (add-hook 'tuareg-mode-hook 'merlin-mode)
@@ -162,7 +158,6 @@
   (setq-default
    whitespace-line-column 80
    whitespace-style       '(face lines-tail))
-
 
 
 ; --- startup ---
