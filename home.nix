@@ -1,17 +1,22 @@
 { pkgs, ... }:
 
+let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarball/master") {}; in
 {
 
   home.packages = with pkgs; [
+
     # utils
     pandoc
     gnome3.dconf # [home-manager switch] does not work without this for some reason
-    
-    # these will not hurt
-    git scrot xclip htop srm file killall p7zip ntfs3g
 
-    # better utils
-    zsh ripgrep fd bat exa dua
+    # these will not hurt
+    scrot xclip srm file ntfs3g
+    
+    # compression
+    p7zip zip
+
+    # the Rust fleet
+    ripgrep fd bat exa dua ytop sd tealdeer procs
 
     # use zsh in nix-shell
     any-nix-shell
@@ -20,13 +25,17 @@
     neovim emacs
 
     # gui apps
-    firefox vlc pavucontrol tdesktop signal-desktop gthumb
-    transmission-gtk nextcloud-client xarchiver
-    redshift anki
+    firefox vlc pavucontrol 
+    transmission-gtk nextcloud-client
+    redshift 
+    signal-desktop gthumb
+    anki
+    inkscape
+
+    nixpkgs-master.tdesktop
 
     # cli apps
-    youtube-dl gnupg sshfs bind jmtpfs ffmpeg
-    exercism
+    youtube-dl gnupg sshfs jmtpfs ffmpeg exercism
 
     # encryption
     gocryptfs veracrypt cryfs
@@ -35,12 +44,18 @@
     opam gnum4 glibc_multi
 
     # misc dev
-    gcc gnumake
-    graphviz
-    stack
+    gcc gnumake graphviz
 
     # DOOM
     gzdoom
+
+    # the haskell ecosystem is killing me
+    stack hlint ghc
+
+    # UNFREE
+    unrar
+    nixpkgs-master.ripcord
+
   ];
 
   programs.git = {
