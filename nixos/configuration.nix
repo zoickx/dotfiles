@@ -25,10 +25,13 @@
     loader.efi.canTouchEfiVariables = true;
 
     initrd.luks.devices.rootfs = {
-      device = "/dev/nvme0n1p2";
+      device = "/dev/sda2";
       preLVM = true;
       allowDiscards = true;
     };
+
+    blacklistedKernelModules = [ "snd_hda_intel" ]; # fsck zoom
+
   };
 
   networking = {
