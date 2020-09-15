@@ -6,8 +6,10 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
   home.packages = with pkgs; [
 
     # utils
-    pandoc
     gnome3.dconf # [home-manager switch] does not work without this for some reason
+
+    # use zsh in nix-shell
+    any-nix-shell
 
     # these will not hurt
     scrot xclip srm file ntfs3g
@@ -18,20 +20,17 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
     # the Rust fleet
     ripgrep fd bat exa dua ytop sd tealdeer procs
 
-    # use zsh in nix-shell
-    any-nix-shell
-
     # editors
     neovim emacs
 
     # gui apps
     firefox vlc pavucontrol 
-    transmission-gtk nextcloud-client
+    nextcloud-client
     redshift 
     signal-desktop gthumb
-    anki
-    inkscape
-
+    transmission-gtk 
+    torbrowser
+    libreoffice
     nixpkgs-master.tdesktop
 
     # cli apps
@@ -46,15 +45,16 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
     # misc dev
     gcc gnumake graphviz
 
-    # DOOM
-    gzdoom
-
     # the haskell ecosystem is killing me
     stack hlint ghc
 
     # UNFREE
     unrar
+    nixpkgs-master.zoom-us
     nixpkgs-master.ripcord
+
+    # unused / superseded
+    # pandoc anki inkscape gzdoom
 
   ];
 
@@ -72,7 +72,7 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
 
   ## TODO (1): this simply doesn't work - can't install unfree before this, but can't run this w/o installing unfree
   ## TODO (2): allow on a per-package basis, not globally
-  #home.file.".config/nixpkgs/config.nix".text = "{ AllowUnfree = true; }";
+  #home.file.".config/nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
   # bat syntaxes
   home.file.".config/bat/syntaxes/Coq.sublime-syntax" = {
@@ -157,7 +157,7 @@ let nixpkgs-master = import (fetchTarball "https://github.com/NixOS/nixpkgs/tarb
     '';
 
     profileExtra = ''
-      gocryptfs -passfile ~/.config/org-passfile 'NX/[C]org' 'org'
+      gocryptfs -passfile ~/.config/org-passfile 'NX/[C]org' 'Syncthing/org'
 
       if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
         startx $HOME/dotfiles/xinitrc &> $HOME/.local/share/startx.log
