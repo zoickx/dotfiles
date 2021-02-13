@@ -1,6 +1,6 @@
 ; --- basics ---
 ; default monospaced font
-(set-default-font "Iosevka-14")
+(set-frame-font "Iosevka-14")
 ; no cursor blinkage
 (blink-cursor-mode 0)
 ; no initial messages
