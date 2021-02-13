@@ -127,15 +127,6 @@ CopyFile /var/lib/systemd/rfkill/pci-0000:05:00.0:wlan
 CopyFile /var/lib/systemd/rfkill/platform-thinkpad_acpi:bluetooth
 CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
-CreateFile /var/log/btmp 660 '' utmp > /dev/null
-CopyFile /var/log/journal/9ac108f80a5745e59467f75e5bd8537b/system.journal 640 '' systemd-journal
-CopyFile /var/log/journal/9ac108f80a5745e59467f75e5bd8537b/user-1000.journal 640 '' systemd-journal
-CreateDir /var/log/journal/remote 2755 '' systemd-journal-remote
-CopyFile /var/log/lastlog 664 '' utmp
-CopyFile /var/log/pacman.log
-CreateDir /var/log/private 700
-CopyFile /var/log/wtmp 664 '' utmp
-CreateDir /var/tmp/systemd-private-9810e3bd4c87447fa1041a33d05dd45c-systemd-logind.service-gZz8uq/tmp 1777
 
 
 # Sat Feb 13 23:06:47 EET 2021 - New file properties
@@ -145,7 +136,3 @@ SetFileProperty /etc/pacman.d/gnupg/openpgp-revocs.d mode 700
 SetFileProperty /etc/pacman.d/gnupg/private-keys-v1.d mode 700
 SetFileProperty /usr/bin/newgidmap mode 755
 SetFileProperty /usr/bin/newuidmap mode 755
-SetFileProperty /var/log/journal/9ac108f80a5745e59467f75e5bd8537b group systemd-journal
-SetFileProperty /var/log/journal/9ac108f80a5745e59467f75e5bd8537b mode 2755
-SetFileProperty /var/log/journal group systemd-journal
-SetFileProperty /var/tmp/systemd-private-9810e3bd4c87447fa1041a33d05dd45c-systemd-logind.service-gZz8uq mode 700
