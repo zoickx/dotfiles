@@ -45,6 +45,9 @@
 ;; color theme
   (load-theme 'base16-google-dark t)
 
+;; undo for the sane
+  (global-undo-tree-mode)
+
 ;; smooth-scrolling
   (smooth-scrolling-mode 1)
 
@@ -71,6 +74,7 @@
       (funcall command (prefix-numeric-value count))))
   (define-key evil-motion-state-map (kbd "k") 'my-evil-previous-line)
   (define-key evil-motion-state-map (kbd "j") 'my-evil-next-line)
+  (evil-set-undo-system 'undo-tree)
 
 ;; GPG
   (setq epa-pinentry-mode 'loopback)
