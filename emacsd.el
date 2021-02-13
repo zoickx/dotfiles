@@ -27,14 +27,14 @@
 
 ;; packages to install
 (setq pkgs nil)
-(setq pkgs (append pkgs '(evil ranger smooth-scrolling))) ; sanity
-(setq pkgs (append pkgs '(magit which-key sudo-edit)))    ; QOL
-(setq pkgs (append pkgs '(base16-theme)))                 ; theme
-(setq pkgs (append pkgs '(proof-general company-coq)))    ; coq
-(setq pkgs (append pkgs '(racer rust-mode)))              ; rust
-(setq pkgs (append pkgs '(nix-mode)))                     ; nix
-(setq pkgs (append pkgs '(tuareg merlin)))                ; ocaml
-(setq pkgs (append pkgs '(markdown-mode)))                ; md
+(setq pkgs (append pkgs '(evil undo-tree ranger smooth-scrolling))) ; sanity
+(setq pkgs (append pkgs '(magit which-key sudo-edit)))              ; QOL
+(setq pkgs (append pkgs '(base16-theme)))                           ; theme
+(setq pkgs (append pkgs '(markdown-mode)))                          ; markup
+(setq pkgs (append pkgs '(elpy)))                                   ; python
+(setq pkgs (append pkgs '(dante flycheck-haskell)))                 ; haskell
+(setq pkgs (append pkgs '(proof-general company-coq)))              ; coq
+(setq pkgs (append pkgs '(activity-watch-mode)))                    ; activitywatch
 (setq package-selected-packages pkgs)
 
 ;; refresh and install packages on first run
@@ -50,6 +50,9 @@
 
 ;; smooth-scrolling
   (smooth-scrolling-mode 1)
+
+;; AcitivtyWatch
+  (global-activity-watch-mode)
 
 ;; ranger
   (global-set-key (kbd "C-x C-r") 'ranger)
@@ -115,6 +118,17 @@
   (setq org-archive-location "~/org/amygdala/org-archive.org::")
   (setq org-archive-save-context-info '(time file))
 
+;; markdown
+  (add-to-list 'auto-mode-alist '("\\.page\\'" . markdown-mode))
+
+;; 80-column rule rules
+  ; auto-reflow to 80 by default
+  (setq-default fill-column 80)
+  ; [whitespace-mode] will highlight lines over 80
+  (setq-default
+   whitespace-line-column 80
+   whitespace-style       '(face lines-tail))
+
 ;; proof general + company-coq
   (setq coq-smie-user-tokens '(("≈" . "=") ("≡" . "="))) ; proper indentation for equivalence symbols
   (setq proof-splash-enable nil)
@@ -135,37 +149,13 @@
      ((((type x) (class color) (background dark)) (:background "gray8"))) t))
 
 
-;; rust + racer
-  (add-hook 'rust-mode-hook 'racer-mode)
-  (add-hook 'racer-mode-hook 'eldoc-mode)
-  (add-hook 'racer-mode-hook 'company-mode)
-  (setq company-tooltip-align-annotations t)
-  (with-eval-after-load 'rust-mode
-    (progn
-      (define-key rust-mode-map (kbd "TAB") 'company-indent-or-complete-common)
-      (define-key rust-mode-map (kbd "C-c C-d") 'racer-describe)))
+;; python
+  (add-hook 'python-mode-hook 'elpy-enable)
 
-;; ocaml merlin
-  (autoload 'merlin-mode "merlin" "Merlin mode" t)
-  (add-hook 'tuareg-mode-hook 'merlin-mode)
-  (add-hook 'caml-mode-hook 'merlin-mode)
-  ;; TODO: fix this
-  ; (with-eval-after-load 'merlin-mode
-  ;   (progn
-  ;     (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
-  ;     (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)))
 
-;; markdown
-  (add-to-list 'auto-mode-alist '("\\.page\\'" . markdown-mode))
-
-;; 80-column rule rules
-  ; auto-reflow to 80 by default
-  (setq-default fill-column 80)
-  ; [whitespace-mode] will highlight lines over 80
-  (setq-default
-   whitespace-line-column 80
-   whitespace-style       '(face lines-tail))
-
+;; haskell
+  (add-hook 'haskell-mode-hook 'dante-mode)
+  (add-hook 'haskell-mode-hook 'flycheck-mode)
 
 ; --- startup ---
 (ranger)
