@@ -101,11 +101,13 @@
 
   ; todo keywords
   (setq org-todo-keywords
-	'((sequence "TODO" "CURR" "|" "DONE")
-	  (sequence "|" "FAIL")))
+	'((sequence "ACTN" "CURR" "|" "DONE")
+	  (sequence "|" "FAIL")
+	  (sequence "|" "JUNK")))
   (setq org-todo-keyword-faces
         '(("CURR" . (:foreground "orange" :weight bold :background "gray16"))
-          ("FAIL" . (:foreground "black" :background "gray20"))))
+          ("FAIL" . (:foreground "black" :background "gray20"))
+          ("JUNK" . (:foreground "black" :background "gray20"))))
   (with-eval-after-load 'org
     (define-key org-mode-map (kbd "C-c C-<return>") 'org-todo))
 
