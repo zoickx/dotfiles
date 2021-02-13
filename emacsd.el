@@ -12,7 +12,8 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 ; backup in one place
-(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 ; do not suspend on (probably accidental) C-z
 (global-unset-key (kbd "C-z"))
 ; show current column
