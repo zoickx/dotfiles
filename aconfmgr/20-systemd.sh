@@ -8,14 +8,17 @@ CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket /usr/li
 CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket /usr/lib/systemd/user/gpg-agent-ssh.socket
 CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent.socket /usr/lib/systemd/user/gpg-agent.socket
 CreateLink /etc/systemd/user/sockets.target.wants/p11-kit-server.socket /usr/lib/systemd/user/p11-kit-server.socket
-CopyFile /var/lib/systemd/backlight/pci-0000:00:02.0:backlight:intel_backlight
-CopyFile /var/lib/systemd/catalog/database
+
 CreateDir /var/lib/systemd/coredump
 CreateDir /var/lib/systemd/linger
 CreateDir /var/lib/systemd/pstore
+
+CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
+CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
+
+CopyFile /var/lib/systemd/backlight/pci-0000:00:02.0:backlight:intel_backlight
+CopyFile /var/lib/systemd/catalog/database
 CopyFile /var/lib/systemd/random-seed 600
 CopyFile /var/lib/systemd/rfkill/pci-0000:00:14.0-usb-0:5:1.0:bluetooth
 CopyFile /var/lib/systemd/rfkill/pci-0000:05:00.0:wlan
 CopyFile /var/lib/systemd/rfkill/platform-thinkpad_acpi:bluetooth
-CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
-CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
