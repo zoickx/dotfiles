@@ -4,7 +4,6 @@ CopyFile /etc/hostname # hostname
 CopyFile /etc/locale.gen # basically language support
 CopyFile /etc/mkinitcpio.conf # kernel modules
 CopyFile /etc/pacman.d/mirrorlist # mirrors pacman downloads packages from
-CopyFile /etc/resolv.conf # idk..resolvconf
 CopyFile /etc/sudoers # sudo settings
 CopyFile /etc/shells # viable shell files
 CreateLink /etc/localtime /usr/share/zoneinfo/EET # timezone setting

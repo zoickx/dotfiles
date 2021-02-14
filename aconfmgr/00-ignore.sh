@@ -7,6 +7,7 @@ IgnorePath '/var/tmp/*'
 IgnorePath '/etc/pacman.d/gnupg/*'
 IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/local/bin/*' # should be manageable like $HOME
+IgnorePath '/etc/resolv.conf' # managed by dhcpcd
 
 # some password-related stuff best left private
 IgnorePath '/etc/.pwd.lock'
