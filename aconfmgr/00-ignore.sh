@@ -33,6 +33,7 @@ IgnorePath '/lost+found'
 IgnorePath '/etc/passwd.OLD'
 IgnorePath '/usr/local/man/*'
 IgnorePath '/usr/share/terminfo/*'
+IgnorePath '/usr/share/mime/*'
 IgnorePath '*.cache' # ambitious
 
 # I really don't know what these are, airing on the side of caution
