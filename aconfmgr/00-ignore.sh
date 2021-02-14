@@ -9,15 +9,15 @@ IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/local/bin/*' # should be manageable like $HOME
 
 # some password-related stuff best left private
-IgnorPath '/etc/.pwd.lock'
-IgnorPath '/etc/passwd'
-IgnorPath '/etc/passwd-'
-IgnorPath '/etc/shadow'
-IgnorPath '/etc/shadow-'
-IgnorPath '/etc/gshadow'
-IgnorPath '/etc/gshadow-'
-IgnorPath '/etc/group'
-IgnorPath '/etc/group-'
+IgnorePath '/etc/.pwd.lock'
+IgnorePath '/etc/passwd'
+IgnorePath '/etc/passwd-'
+IgnorePath '/etc/shadow'
+IgnorePath '/etc/shadow-'
+IgnorePath '/etc/gshadow'
+IgnorePath '/etc/gshadow-'
+IgnorePath '/etc/group'
+IgnorePath '/etc/group-'
 
 # these things are kind of meaningless / should be steadily generated
 # might want to remove this altogether as opposed to ignoring
