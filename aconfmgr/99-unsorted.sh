@@ -1,23 +1,3 @@
-
-
-# Sat Feb 13 23:06:34 EET 2021 - Unknown packages
-
-
-
-AddPackage bison # The GNU general-purpose parser generator
-AddPackage flex # A tool for generating text-scanning programs
-AddPackage gettext # GNU internationalization library
-AddPackage groff # GNU troff text-formatting system
-AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
-AddPackage texinfo # GNU documentation system for on-line information and printed output
-
-
-# Sat Feb 13 23:06:34 EET 2021 - Unknown foreign packages
-
-
-AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
-
-
 # Sat Feb 13 23:06:35 EET 2021 - New / changed files
 
 CopyFile /etc/default/grub
