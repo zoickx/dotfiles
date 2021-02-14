@@ -48,32 +48,33 @@ AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
 
 # Sat Feb 13 23:06:35 EET 2021 - New / changed files
 
+CopyFile /etc/default/grub
+CopyFile /etc/fstab
+CopyFile /etc/hostname
+CopyFile /etc/locale.gen
+CopyFile /etc/mkinitcpio.conf
+CopyFile /etc/pacman.d/mirrorlist
+CopyFile /etc/resolv.conf
+CopyFile /etc/sudoers
+CopyFile /etc/group
+CopyFile /etc/group-
+CopyFile /etc/shells
+CreateLink /etc/localtime /usr/share/zoneinfo/EET
+
 
 CreateFile /etc/.pwd.lock 600 > /dev/null
 CopyFile /etc/.updated
 CopyFile /etc/adjtime
-CopyFile /etc/default/grub
-CopyFile /etc/fstab
-CopyFile /etc/group
-CopyFile /etc/group-
 CopyFile /etc/gshadow
 CopyFile /etc/gshadow- 600
-CopyFile /etc/hostname
 CopyFile /etc/ld.so.cache
-CopyFile /etc/locale.gen
-CreateLink /etc/localtime /usr/share/zoneinfo/EET
 CopyFile /etc/machine-id 444
-CopyFile /etc/mkinitcpio.conf
 CopyFile /etc/mkinitcpio.d/linux-zen.preset
 CreateLink /etc/os-release ../usr/lib/os-release
-CopyFile /etc/pacman.d/mirrorlist
 CopyFile /etc/passwd
 CopyFile /etc/passwd-
-CopyFile /etc/resolv.conf
 CopyFile /etc/shadow
 CopyFile /etc/shadow- 600
-CopyFile /etc/shells
-CopyFile /etc/sudoers
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service /usr/lib/systemd/system/getty@.service
 CreateLink /etc/systemd/system/multi-user.target.wants/dhcpcd.service /usr/lib/systemd/system/dhcpcd.service
 CreateLink /etc/systemd/system/multi-user.target.wants/remote-fs.target /usr/lib/systemd/system/remote-fs.target
