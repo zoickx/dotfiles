@@ -58,6 +58,7 @@ CopyFile /etc/resolv.conf
 CopyFile /etc/sudoers
 CopyFile /etc/shells
 CreateLink /etc/localtime /usr/share/zoneinfo/EET
+CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null
 
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service /usr/lib/systemd/system/getty@.service
 CreateLink /etc/systemd/system/multi-user.target.wants/dhcpcd.service /usr/lib/systemd/system/dhcpcd.service
@@ -84,7 +85,6 @@ CopyFile /usr/lib/locale/locale-archive
 CopyFile /usr/lib/udev/hwdb.bin 444
 CopyFile /usr/local/bin/stack 755
 CopyFile /usr/share/info/dir
-CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null
 CopyFile /var/lib/dhcpcd/secret 400
 CopyFile /var/lib/dhcpcd/wlp5s0-HeimrTMP.lease 640
 CreateDir /var/lib/machines 700
