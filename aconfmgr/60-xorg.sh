@@ -23,3 +23,10 @@ AddPackage xorg-xsetroot # dwm status bar text with [xsetroot]
 AddPackage xorg-xset # keyboard params in [.xinitrc] with [xset]
 AddPackage dmenu # the fancy app launcher
 AddPackage --foreign ttf-iosevka # the main font
+
+## Rice
+
+AddPackage lxappearance # Feature-rich GTK+ theme switcher of the LXDE Desktop
+AddPackage arc-gtk-theme # A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell
+AddPackage papirus-icon-theme # Papirus icon theme
+AddPackage ttf-fira-sans # Mozilla's sans-serif typeface designed for Firefox OS

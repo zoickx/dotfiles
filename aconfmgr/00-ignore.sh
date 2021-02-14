@@ -50,3 +50,5 @@ IgnorePath '/var/lib/systemd/random-seed'
 IgnorePath '/usr/bin/newgidmap' # these two have weird mode changes for some reason
 IgnorePath '/usr/bin/newuidmap' #
 
+IgnorePath '/var/lib/colord/*'     # something to do with gtk theming (?)
+IgnorePath '/usr/share/glib-2.0/*' #
