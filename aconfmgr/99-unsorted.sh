@@ -66,16 +66,6 @@ CopyFile /etc/machine-id 444
 CopyFile /etc/mkinitcpio.conf
 CopyFile /etc/mkinitcpio.d/linux-zen.preset
 CreateLink /etc/os-release ../usr/lib/os-release
-CreateFile /etc/pacman.d/gnupg/.gpg-v21-migrated > /dev/null
-CopyFile /etc/pacman.d/gnupg/gpg-agent.conf
-CopyFile /etc/pacman.d/gnupg/gpg.conf
-CopyFile /etc/pacman.d/gnupg/openpgp-revocs.d/A298F36E8E1E9F34F2EF21CBD92582A00A513606.rev 600
-CopyFile /etc/pacman.d/gnupg/private-keys-v1.d/296EF16A5BD35EA0BEB9CA90E152BA693C587206.key 600
-CopyFile /etc/pacman.d/gnupg/pubring.gpg
-CopyFile /etc/pacman.d/gnupg/pubring.gpg~
-CreateFile /etc/pacman.d/gnupg/secring.gpg 600 > /dev/null
-CopyFile /etc/pacman.d/gnupg/tofu.db
-CopyFile /etc/pacman.d/gnupg/trustdb.gpg
 CopyFile /etc/pacman.d/mirrorlist
 CopyFile /etc/passwd
 CopyFile /etc/passwd-
@@ -132,7 +122,5 @@ CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 # Sat Feb 13 23:06:47 EET 2021 - New file properties
 
 
-SetFileProperty /etc/pacman.d/gnupg/openpgp-revocs.d mode 700
-SetFileProperty /etc/pacman.d/gnupg/private-keys-v1.d mode 700
 SetFileProperty /usr/bin/newgidmap mode 755
 SetFileProperty /usr/bin/newuidmap mode 755
