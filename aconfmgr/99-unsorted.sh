@@ -3,41 +3,13 @@
 # Sat Feb 13 23:06:34 EET 2021 - Unknown packages
 
 
-AddPackage apparmor # Mandatory Access Control (MAC) using Linux Security Module (LSM)
-AddPackage autoconf # A GNU tool for automatically configuring source code
-AddPackage automake # A GNU tool for automatically creating Makefiles
-AddPackage base # Minimal package set to define a basic Arch Linux installation
-AddPackage binutils # A set of programs to assemble and manipulate binary and object files
+
 AddPackage bison # The GNU general-purpose parser generator
-AddPackage dhcpcd # RFC2131 compliant DHCP client daemon
-AddPackage efibootmgr # Linux user-space application to modify the EFI Boot Manager
-AddPackage fakeroot # Tool for simulating superuser privileges
-AddPackage file # File type identification utility
-AddPackage findutils # GNU utilities to locate files
 AddPackage flex # A tool for generating text-scanning programs
-AddPackage gawk # GNU version of awk
-AddPackage gcc # The GNU Compiler Collection - C and C++ frontends
 AddPackage gettext # GNU internationalization library
-AddPackage grep # A string search utility
 AddPackage groff # GNU troff text-formatting system
-AddPackage grub # GNU GRand Unified Bootloader (2)
-AddPackage gzip # GNU compression utility
-AddPackage intel-ucode # Microcode update files for Intel CPUs
-AddPackage libtool # A generic library support script
-AddPackage linux-firmware # Firmware files for Linux
-AddPackage linux-zen # The Linux ZEN kernel and modules
-AddPackage m4 # The GNU macro processor
-AddPackage make # GNU make utility to maintain groups of programs
-AddPackage man-db # A utility for reading man pages
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
-AddPackage pacman # A library-based package manager with dependency support
-AddPackage patch # A utility to apply patch files to original sources
-AddPackage pkgconf # Package compiler and linker metadata toolkit
-AddPackage sed # GNU stream editor
-AddPackage sudo # Give certain users the ability to run some commands as root
 AddPackage texinfo # GNU documentation system for on-line information and printed output
-AddPackage which # A utility to show the full path of commands
-AddPackage wpa_supplicant # A utility providing key negotiation for WPA wireless networks
 
 
 # Sat Feb 13 23:06:34 EET 2021 - Unknown foreign packages
