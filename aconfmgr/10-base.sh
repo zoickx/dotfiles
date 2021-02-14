@@ -1,7 +1,6 @@
 ## The Barest Of Bones - Basically Firmware
 
 AddPackage linux-zen # The Linux ZEN kernel and modules
-AddPackage apparmor # Mandatory Access Control (MAC) using Linux Security Module (LSM)
 AddPackage linux-firmware # Firmware files for Linux
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage efibootmgr # Linux user-space application to modify the EFI Boot Manager
