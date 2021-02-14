@@ -17,8 +17,6 @@ CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 
 CopyFile /var/lib/systemd/backlight/pci-0000:00:02.0:backlight:intel_backlight
-CopyFile /var/lib/systemd/catalog/database
-CopyFile /var/lib/systemd/random-seed 600
 CopyFile /var/lib/systemd/rfkill/pci-0000:00:14.0-usb-0:5:1.0:bluetooth
 CopyFile /var/lib/systemd/rfkill/pci-0000:05:00.0:wlan
 CopyFile /var/lib/systemd/rfkill/platform-thinkpad_acpi:bluetooth

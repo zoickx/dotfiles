@@ -39,3 +39,6 @@ IgnorePath '/var/lib/dhcpcd/*' # seemed to contain private information about my 
 IgnorePath '/var/lib/machines'
 IgnorePath '/var/lib/portables'
 IgnorePath '/var/lib/private'
+
+IgnorePath '/var/lib/systemd/catalog/database'
+IgnorePath '/var/lib/systemd/random-seed'
