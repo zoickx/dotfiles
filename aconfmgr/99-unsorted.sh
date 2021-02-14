@@ -81,15 +81,6 @@ CopyFile /var/lib/systemd/rfkill/platform-thinkpad_acpi:bluetooth
 CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 
-CopyFile /usr/lib/locale/locale-archive
-CopyFile /usr/lib/udev/hwdb.bin 444
-CopyFile /usr/share/info/dir
-CopyFile /var/lib/dhcpcd/secret 400
-CopyFile /var/lib/dhcpcd/wlp5s0-HeimrTMP.lease 640
-CreateDir /var/lib/machines 700
-CreateDir /var/lib/portables 700
-CreateDir /var/lib/private 700
-
 
 # Sat Feb 13 23:06:47 EET 2021 - New file properties
 
