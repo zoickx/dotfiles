@@ -6,3 +6,14 @@ IgnorePath '/var/log/*'
 IgnorePath '/var/tmp/*'
 IgnorePath '/etc/pacmand/gnupg/*'
 IgnorePath '/usr/lib/modules/*'
+
+# some password-related stuff best left private
+IgnorPath /etc/.pwd.lock
+IgnorPath /etc/passwd
+IgnorPath /etc/passwd-
+IgnorPath /etc/shadow
+IgnorPath /etc/shadow-
+IgnorPath /etc/gshadow
+IgnorPath /etc/gshadow-
+IgnorPath /etc/group
+IgnorPath /etc/group-

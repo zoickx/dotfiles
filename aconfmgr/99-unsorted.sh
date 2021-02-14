@@ -56,8 +56,6 @@ CopyFile /etc/mkinitcpio.conf
 CopyFile /etc/pacman.d/mirrorlist
 CopyFile /etc/resolv.conf
 CopyFile /etc/sudoers
-CopyFile /etc/group
-CopyFile /etc/group-
 CopyFile /etc/shells
 CreateLink /etc/localtime /usr/share/zoneinfo/EET
 
@@ -83,19 +81,12 @@ CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 
 
-CreateFile /etc/.pwd.lock 600 > /dev/null
 CopyFile /etc/.updated
 CopyFile /etc/adjtime
-CopyFile /etc/gshadow
-CopyFile /etc/gshadow- 600
 CopyFile /etc/ld.so.cache
 CopyFile /etc/machine-id 444
 CopyFile /etc/mkinitcpio.d/linux-zen.preset
 CreateLink /etc/os-release ../usr/lib/os-release
-CopyFile /etc/passwd
-CopyFile /etc/passwd-
-CopyFile /etc/shadow
-CopyFile /etc/shadow- 600
 CreateDir /lost+found 700
 CopyFile /usr/lib/locale/locale-archive
 CopyFile /usr/lib/udev/hwdb.bin 444
