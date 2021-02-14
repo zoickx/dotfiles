@@ -1,17 +1,4 @@
-# Sat Feb 13 23:06:35 EET 2021 - New / changed files
-
-CopyFile /etc/default/grub
-CopyFile /etc/fstab
-CopyFile /etc/hostname
-CopyFile /etc/locale.gen
-CopyFile /etc/mkinitcpio.conf
-CopyFile /etc/pacman.d/mirrorlist
-CopyFile /etc/resolv.conf
-CopyFile /etc/sudoers
-CopyFile /etc/shells
-CreateLink /etc/localtime /usr/share/zoneinfo/EET
-CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null
-
+## I don't understand these very well; figure out as we go
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service /usr/lib/systemd/system/getty@.service
 CreateLink /etc/systemd/system/multi-user.target.wants/dhcpcd.service /usr/lib/systemd/system/dhcpcd.service
 CreateLink /etc/systemd/system/multi-user.target.wants/remote-fs.target /usr/lib/systemd/system/remote-fs.target
@@ -32,10 +19,3 @@ CopyFile /var/lib/systemd/rfkill/pci-0000:05:00.0:wlan
 CopyFile /var/lib/systemd/rfkill/platform-thinkpad_acpi:bluetooth
 CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
-
-
-# Sat Feb 13 23:06:47 EET 2021 - New file properties
-
-
-SetFileProperty /usr/bin/newgidmap mode 755
-SetFileProperty /usr/bin/newuidmap mode 755
