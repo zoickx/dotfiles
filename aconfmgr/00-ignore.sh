@@ -42,3 +42,6 @@ IgnorePath '/var/lib/private'
 
 IgnorePath '/var/lib/systemd/catalog/database'
 IgnorePath '/var/lib/systemd/random-seed'
+
+IgnorePath '/usr/bin/newgidmap' # these two have weird mode changes for some reason
+IgnorePath '/usr/bin/newuidmap' #
