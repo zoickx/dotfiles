@@ -1,18 +1,25 @@
+## Basic Xorg
 AddPackage xorg-server # Xorg X server
+AddPackage xorg-xinit # X.Org initialisation program # (startx)
 
-# [startx]
-AddPackage xorg-xinit # X.Org initialisation program
-# dwm status bar text with [xsetroot]
-AddPackage xorg-xsetroot # Classic X utility to set your root window background to a given pattern or color
-# keyboard params in [.xinitrc] with [xset]
-AddPackage xorg-xset # User preference utility for X
+## Xorg config
 
-# dependencies of dmw
+# Keyboard: us,ru,ua; shifts_toggle; ctrl swapped with caps
+CopyFile /etc/X11/xorg.conf.d/00-keyboard.conf
+# Touchpad: tapping; natural scrolling
+CopyFile /etc/X11/xorg.conf.d/40-libinput.conf
+# Mouse: flat acceleration profile
+CopyFile /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+
+## DWM
+
+# build deps
 AddPackage libx11 # X11 client-side library
 AddPackage libxft # FreeType-based font drawing library for X
 AddPackage libxinerama # X11 Xinerama extension library
 
-# the fancy app launcher
-AddPackage dmenu # Generic menu for X
-# the font
-AddPackage --foreign ttf-iosevka # Typeface family designed for coding, terminal use and technical documents.
+# related packages
+AddPackage xorg-xsetroot # dwm status bar text with [xsetroot]
+AddPackage xorg-xset # keyboard params in [.xinitrc] with [xset]
+AddPackage dmenu # the fancy app launcher
+AddPackage --foreign ttf-iosevka # the main font
