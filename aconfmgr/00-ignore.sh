@@ -17,3 +17,15 @@ IgnorPath /etc/gshadow
 IgnorPath /etc/gshadow-
 IgnorPath /etc/group
 IgnorPath /etc/group-
+
+# these things are kind of meaningless / should be steadily generated
+# might want to remove this altogether as opposed to ignoring
+IgnorePath /etc/.updated
+IgnorePath /var/.updated
+IgnorePath /etc/adjtime
+IgnorePath /etc/ld.so.cache
+IgnorePath /etc/machine-id
+IgnorePath /var/lib/dbus/machine-id
+IgnorePath /etc/mkinitcpio.d/linux-zen.preset
+IgnorePath /etc/os-release
+IgnorePath /lost+found

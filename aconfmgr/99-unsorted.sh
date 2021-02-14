@@ -80,21 +80,11 @@ CopyFile /var/lib/systemd/rfkill/platform-thinkpad_acpi:bluetooth
 CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 
-
-CopyFile /etc/.updated
-CopyFile /etc/adjtime
-CopyFile /etc/ld.so.cache
-CopyFile /etc/machine-id 444
-CopyFile /etc/mkinitcpio.d/linux-zen.preset
-CreateLink /etc/os-release ../usr/lib/os-release
-CreateDir /lost+found 700
 CopyFile /usr/lib/locale/locale-archive
 CopyFile /usr/lib/udev/hwdb.bin 444
 CopyFile /usr/local/bin/stack 755
 CopyFile /usr/share/info/dir
-CopyFile /var/.updated
 CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null
-CreateLink /var/lib/dbus/machine-id /etc/machine-id
 CopyFile /var/lib/dhcpcd/secret 400
 CopyFile /var/lib/dhcpcd/wlp5s0-HeimrTMP.lease 640
 CreateDir /var/lib/machines 700
