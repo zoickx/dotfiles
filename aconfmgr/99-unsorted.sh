@@ -83,7 +83,6 @@ CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 
 CopyFile /usr/lib/locale/locale-archive
 CopyFile /usr/lib/udev/hwdb.bin 444
-CopyFile /usr/local/bin/stack 755
 CopyFile /usr/share/info/dir
 CopyFile /var/lib/dhcpcd/secret 400
 CopyFile /var/lib/dhcpcd/wlp5s0-HeimrTMP.lease 640

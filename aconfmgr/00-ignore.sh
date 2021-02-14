@@ -6,6 +6,7 @@ IgnorePath '/var/log/*'
 IgnorePath '/var/tmp/*'
 IgnorePath '/etc/pacmand/gnupg/*'
 IgnorePath '/usr/lib/modules/*'
+IgnorePath '/usr/local/bin/*' # should be manageable like $HOME
 
 # some password-related stuff best left private
 IgnorPath '/etc/.pwd.lock'
