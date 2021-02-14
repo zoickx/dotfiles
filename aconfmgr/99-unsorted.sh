@@ -86,16 +86,6 @@ CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent.socket /usr/lib/syst
 CreateLink /etc/systemd/user/sockets.target.wants/p11-kit-server.socket /usr/lib/systemd/user/p11-kit-server.socket
 CreateDir /lost+found 700
 CopyFile /usr/lib/locale/locale-archive
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.alias
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.alias.bin
-CreateFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.builtin.alias.bin > /dev/null
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.builtin.bin
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.dep
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.dep.bin
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.devname
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.softdep
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.symbols
-CopyFile /usr/lib/modules/5.10.15-zen2-1-zen/modules.symbols.bin
 CopyFile /usr/lib/udev/hwdb.bin 444
 CopyFile /usr/local/bin/stack 755
 CopyFile /usr/share/info/dir

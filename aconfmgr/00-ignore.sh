@@ -5,3 +5,4 @@ IgnorePath '/var/lib/pacman/*' # I don't actually know what this is, but it does
 IgnorePath '/var/log/*'
 IgnorePath '/var/tmp/*'
 IgnorePath '/etc/pacmand/gnupg/*'
+IgnorePath '/usr/lib/modules/*'
