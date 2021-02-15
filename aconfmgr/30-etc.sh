@@ -6,5 +6,7 @@ CopyFile /etc/mkinitcpio.conf # kernel modules
 CopyFile /etc/pacman.d/mirrorlist # mirrors pacman downloads packages from
 CopyFile /etc/sudoers # sudo settings
 CopyFile /etc/shells # viable shell files
+CopyFile /etc/locale.conf # set default locale
+
 CreateLink /etc/localtime /usr/share/zoneinfo/EET # timezone setting
 CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null # yes, lectured I was
