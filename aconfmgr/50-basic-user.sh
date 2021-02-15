@@ -14,6 +14,7 @@ AddPackage dua-cli # A tool to conveniently learn about the disk usage of direct
 AddPackage exa # ls replacement
 AddPackage fd # Simple, fast and user-friendly alternative to find
 AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep
+AddPackage skim # Fuzzy Finder in rust!
 
 ## QOL
 
