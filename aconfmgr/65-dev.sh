@@ -1,3 +1,4 @@
+AddPackage rustup # The Rust toolchain installer
 AddPackage opam # OCaml package manager
 
 # Weird dependencies of (dependencies of) [Helix](https://github.com/vzaliva/helix)

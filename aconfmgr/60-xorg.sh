@@ -26,7 +26,7 @@ AddPackage --foreign ttf-iosevka # the main font
 
 ## Rice
 
-AddPackage lxappearance # Feature-rich GTK+ theme switcher of the LXDE Desktop
+AddPackage lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop (GTK+ 3 version)
 AddPackage arc-gtk-theme # A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell
 AddPackage papirus-icon-theme # Papirus icon theme
 AddPackage ttf-fira-sans # Mozilla's sans-serif typeface designed for Firefox OS

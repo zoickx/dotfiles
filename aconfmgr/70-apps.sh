@@ -33,11 +33,10 @@ AddPackage telegram-desktop # Official Telegram Desktop client
 AddPackage thunar # Modern file manager for Xfce
 AddPackage gthumb # Image browser and viewer for the GNOME Desktop
 AddPackage tumbler # D-Bus service for applications to request thumbnails
-AddPackage vlc # Multi-platform MPEG, VCD/DVD, and DivX player
+AddPackage celluloid # Simple GTK+ frontend for mpv
 AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
 
 AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
 AddPackage redshift # Adjusts the color temperature of your screen according to your surroundings.
 
-AddPackage --foreign webtorrent-desktop-bin # Streaming torrent client.
 AddPackage --foreign zoom # Video Conferencing and Web Conferencing Service
