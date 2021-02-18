@@ -8,10 +8,6 @@ CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket /usr/lib/
 CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent.socket /usr/lib/systemd/user/gpg-agent.socket
 CreateLink /etc/systemd/user/sockets.target.wants/p11-kit-server.socket /usr/lib/systemd/user/p11-kit-server.socket
 
-CreateDir /var/lib/systemd/coredump
-CreateDir /var/lib/systemd/linger
-CreateDir /var/lib/systemd/pstore
-
 CreateFile /var/lib/systemd/timers/stamp-man-db.timer > /dev/null
 CreateFile /var/lib/systemd/timers/stamp-shadow.timer > /dev/null
 
