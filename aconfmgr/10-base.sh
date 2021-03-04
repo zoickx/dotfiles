@@ -30,6 +30,7 @@ AddPackage git # the fast distributed version control system
 
 AddPackage wpa_supplicant # A utility providing key negotiation for WPA wireless networks
 AddPackage dhcpcd # RFC2131 compliant DHCP client daemon
+AddPackage ntfs-3g # NTFS filesystem driver and utilities
 
 ## These from base-devel I don't quite understand, but whatever
 
