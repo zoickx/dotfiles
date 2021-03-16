@@ -6,6 +6,14 @@ AddPackage gocryptfs # Encrypted overlay filesystem written in Go.
 AddPackage veracrypt # Disk encryption with strong security based on TrueCrypt
 AddPackage --foreign srm # A secure replacement for rm(1) that overwrites data before unlinking
 
+# Mullvad kind of doesn't play well
+AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop
+CreateLink /etc/systemd/system/multi-user.target.wants/mullvad-daemon.service /usr/lib/systemd/system/mullvad-daemon.service
+IgnorePath '/etc/mullvad-vpn'
+IgnorePath '/usr/bin/mullvad-problem-report'
+IgnorePath '/usr/bin/mullvad-exclude '
+IgnorePath '/opt/Mullvad\ VPN/resources'
+
 # CLI stuffs
 AddPackage rmlint # Tool to remove duplicates and other lint, being much faster than fdupes
 AddPackage unarchiver # unar and lsar
@@ -13,10 +21,13 @@ AddPackage --foreign librespeed-cli-bin # Command line interface for LibreSpeed 
 AddPackage --foreign dotter-rs-bin # A dotfile manager and templater written in Rust
 
 ## Semi-GUI stuffs
-AddPackage languagetool # An open source language checker
 AddPackage youtube-dl # A command-line program to download videos from YouTube.com and a few more sites
 AddPackage nextcloud-client # Nextcloud desktop client
-AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop
+
+# languagetool appears to have a missing dependency for jdk
+AddPackage languagetool # An open source language checker
+AddPackage jdk-openjdk # OpenJDK Java 15 development kit
+IgnorePath "/usr/lib/jvm/default*" # let jdk handle its defaults
 
 ## Actual proper GUI apps
 
