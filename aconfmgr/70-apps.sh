@@ -7,16 +7,16 @@ AddPackage veracrypt # Disk encryption with strong security based on TrueCrypt
 AddPackage --foreign srm # A secure replacement for rm(1) that overwrites data before unlinking
 
 # CLI stuffs
-AddPackage --foreign tealdeer-bin # A fast tldr client in Rust. Static binaries from GitHub.
 AddPackage rmlint # Tool to remove duplicates and other lint, being much faster than fdupes
+AddPackage unarchiver # unar and lsar
+AddPackage --foreign librespeed-cli-bin # Command line interface for LibreSpeed speed test backends
+AddPackage --foreign dotter-rs-bin # A dotfile manager and templater written in Rust
 
-# semi-GUI stuffs
-AddPackage xclip # Command line interface to the X11 clipboard
-AddPackage scrot # Simple command-line screenshot utility for X
+## Semi-GUI stuffs
+AddPackage languagetool # An open source language checker
 AddPackage youtube-dl # A command-line program to download videos from YouTube.com and a few more sites
 AddPackage nextcloud-client # Nextcloud desktop client
-AddPackage pasystray # PulseAudio system tray (a replacement for padevchooser)
-AddPackage --foreign activitywatch-bin # Log what you do on your computer. Simple, extensible, no third parties.
+AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop
 
 ## Actual proper GUI apps
 
@@ -31,12 +31,14 @@ AddPackage signal-desktop # Signal Private Messenger for Linux
 AddPackage telegram-desktop # Official Telegram Desktop client
 
 AddPackage thunar # Modern file manager for Xfce
-AddPackage gthumb # Image browser and viewer for the GNOME Desktop
+AddPackage imv # Image viewer for Wayland and X11
 AddPackage tumbler # D-Bus service for applications to request thumbnails
-AddPackage celluloid # Simple GTK+ frontend for mpv
 AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
 
+AddPackage gimp # GNU Image Manipulation Program
+AddPackage inkscape # Professional vector graphics editor
+AddPackage --foreign losslesscut-bin # Crossplatform GUI tool for lossless trimming/cutting of video/audio files
+
 AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
-AddPackage redshift # Adjusts the color temperature of your screen according to your surroundings.
 
 AddPackage --foreign zoom # Video Conferencing and Web Conferencing Service

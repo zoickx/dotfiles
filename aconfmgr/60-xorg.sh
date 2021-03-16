@@ -2,6 +2,10 @@
 AddPackage xorg-server # Xorg X server
 AddPackage xorg-xinit # X.Org initialisation program # (startx)
 
+AddPackage xclip # Command line interface to the X11 clipboard
+AddPackage scrot # Simple command-line screenshot utility for X
+AddPackage redshift # Adjusts the color temperature of your screen according to your surroundings.
+
 ## Xorg config
 
 # Keyboard: us,ru,ua; shifts_toggle; ctrl swapped with caps
