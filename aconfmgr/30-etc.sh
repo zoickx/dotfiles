@@ -3,7 +3,7 @@ CopyFile /etc/fstab # what to mount where
 CopyFile /etc/hostname # hostname
 CopyFile /etc/locale.gen # basically language support
 CopyFile /etc/mkinitcpio.conf # kernel modules
-CopyFile /etc/sudoers # sudo settings
+IgnorePath "/etc/sudoers" # TODO: I'm starting to get doubts about the security of this
 CopyFile /etc/shells # viable shell files
 CopyFile /etc/locale.conf # set default locale
 
