@@ -1,0 +1,71 @@
+#############
+### OH-MY-ZSH
+#############
+
+export ZSH=~/.config/oh-my-zsh
+
+plugins=(git colored-man-pages fzf fzf-tab)
+
+ZSH_THEME="lambda"
+
+source $ZSH/oh-my-zsh.sh
+
+
+
+##########
+### CONFIG
+##########
+
+# do not create ~/.lesshst
+export LESSHISTFILE="/dev/null"
+
+
+
+###########
+### ALIASES
+###########
+
+alias aura='aura --color=always'
+alias now="date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; TZ=":America/Los_Angeles" date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; echo; cal"
+
+### Rust fleet
+alias bat='bat --color=always'
+alias ps='procs'
+alias du="dua"
+
+# Cool `ls`
+alias l="exa --all --long --time-style=long-iso --sort=type"
+alias ls="exa --sort=type"
+alias lt="exa --all --tree"
+cd() { builtin cd $1 && exa --sort=type }
+
+# Unlearning commands
+alias killall="echo 'No. Use pkill instead.'"
+alias startx="echo 'Are you sure? Run [really_startx] to start X.'" #
+alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc              # Slowly migrating to Wayland...
+
+n ()
+{
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    nnn "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
+
+### base16-fzf
+## stolen from [https://github.com/fnune/base16-fzf]
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:{{base01}},bg:{{base00}},spinner:{{base0C}},hl:{{base0D}}"\
+" --color=fg:{{base04}},header:{{base0D}},info:{{base0A}},pointer:{{base0C}}"\
+" --color=marker:{{base0C}},fg+:{{base06}},prompt:{{base0A}},hl+:{{base0D}}"

@@ -1,0 +1,66 @@
+[global.variables]
+username = "zoickx"
+full_name = "Ilia Zaichuk"
+email = "zoickx@ztld.org"
+
+[gui.variables]
+mono_font_family = "Iosevka"
+mono_font_size = "16.0"
+
+[base16-theme.variables]
+base16-theme-name = "base16-google-dark"
+base00 = "#1d1f21"
+base01 = "#282a2e"
+base02 = "#373b41"
+base03 = "#969896"
+base04 = "#b4b7b4"
+base05 = "#c5c8c6"
+base06 = "#e0e0e0"
+base07 = "#ffffff"
+base08 = "#CC342B"
+base09 = "#F96A38"
+base0A = "#FBA922"
+base0B = "#198844"
+base0C = "#3971ED"
+base0D = "#3971ED"
+base0E = "#A36AC7"
+base0F = "#3971ED"
+
+[emacs]
+depends = ["gui", "base16-theme"]
+
+[emacs.files]
+"emacs/early-init.el" = "~/.config/emacs/early-init.el"
+"emacs/init.el"       = "~/.config/emacs/init.el"
+"emacs/emacsd.org"    = "~/.config/emacs/emacsd.org"
+
+[i3.files]
+"i3" = "~/.config/i3/config"
+
+[sway.files]
+"sway/sway.conf" = "~/.config/sway/config"
+"sway/waybar.conf" = "~/.config/waybar/config"
+"sway/waybar.css" = "~/.config/waybar/style.css"
+
+[git]
+depends = ["global"]
+
+[git.files]
+"gitconfig" = "~/.config/git/config"
+
+[zsh]
+depends = ["base16-theme"]
+
+[zsh.files]
+"zsh/zshrc" = "~/.zshrc"
+"zsh/zshenv" = "~/.zshenv"
+
+[alacritty]
+depends = ["gui", "base16-theme"]
+
+[alacritty.files]
+"alacritty.yml" = "~/.config/alacritty/alacritty.yml"
+
+## Manually symlink directory: dotter symlinks files and I don't like that
+#[aconfmgr.files]
+#aconfmgr = "~/.config/aconfmgr"

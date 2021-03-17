@@ -94,14 +94,14 @@ Set the default <number>-column-rule to 80-column-rule.
 Font.
 
 #+BEGIN_SRC emacs-lisp
-(set-frame-font "Iosevka-16")
+(set-frame-font "{{mono_font_family}}-{{mono_font_size}}")
 #+END_SRC
 
 Theme.
 
 #+BEGIN_SRC emacs-lisp
 (use-package base16-theme
-  :init (load-theme 'base16-google-dark t))
+  :init (load-theme '{{base16-theme-name}} t))
 #+END_SRC
 * Packages
 ** Generic
@@ -194,7 +194,46 @@ git
   (use-package magit
     :bind ("C-x C-m" . magit-status))
 #+END_SRC
+
+Colorize color names in buffers.
+
+The customization enables rainbow-mode to highlight the names of base16-theme
+colors with the ones in the current theme, provided the handlebars expressions
+are substituted with corresponding hex codes. (probably by dotfile manager)
+
+This kind of already exists in the major ~css-mode~, but looks to be a pain to
+get working as a customizable minor mode.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-mode
+    :commands rainbow-mode
+    :custom
+    (rainbow-html-colors t)
+    :config
+    (setq rainbow-html-colors-alist
+          (append rainbow-html-colors-alist
+                  '(("base00" . "{{base00}}")
+                    ("base01" . "{{base01}}")
+                    ("base02" . "{{base02}}")
+                    ("base03" . "{{base03}}")
+                    ("base04" . "{{base04}}")
+                    ("base05" . "{{base05}}")
+                    ("base06" . "{{base06}}")
+                    ("base07" . "{{base07}}")
+                    ("base08" . "{{base08}}")
+                    ("base09" . "{{base09}}")
+                    ("base0A" . "{{base0A}}")
+                    ("base0B" . "{{base0B}}")
+                    ("base0C" . "{{base0C}}")
+                    ("base0D" . "{{base0D}}")
+                    ("base0E" . "{{base0E}}")
+                    ("base0F" . "{{base0F}}")))))
+#+END_SRC
 ** Languages
+*** yaml
+#+BEGIN_SRC emacs-lisp
+  (use-package yaml-mode)
+#+END_SRC
 *** org-mode
 #+BEGIN_SRC emacs-lisp
   (use-package org
