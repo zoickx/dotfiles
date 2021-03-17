@@ -1,3 +1,0 @@
-#!/bin/sh
-# workaround to use emacs as EDITOR
-emacs -nw "$@"
