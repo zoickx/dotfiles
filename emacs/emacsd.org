@@ -435,8 +435,7 @@ ACTN: add proper MIME file openers
 *** haskell
 **** dante
 #+BEGIN_SRC emacs-lisp
-  (use-package dante
-    :disabled
+  (use-package dante :disabled
     :hook (haskell-mode . flycheck-mode)
           (haskell-mode . dante-mode))
 #+END_SRC
@@ -446,7 +445,6 @@ ACTN: add proper MIME file openers
     :hook (haskell-mode . lsp))
   (use-package lsp-ui
     :after lsp-mode)
-  (use-package haskell-mode)
   (use-package lsp-haskell
     :defer)
 #+END_SRC
