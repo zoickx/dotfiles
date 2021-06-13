@@ -195,12 +195,18 @@ The evil file manager.
     :custom
     (ranger-excluded-extensions '("gpg") "Do not try to decrypt for preview"))
 #+END_SRC
+*** Ivy
+#+BEGIN_SRC emacs-lisp
+  (use-package counsel
+    :config (ivy-mode))
+#+END_SRC
 *** Misc
 
 Ability to bump self to root if needed to save a file.
 
 #+BEGIN_SRC emacs-lisp
-  (use-package sudo-edit)
+  (use-package sudo-edit
+    :defer)
 #+END_SRC
 
 Scroll smoothly when reaching end of buffer.
@@ -222,6 +228,17 @@ git
 #+BEGIN_SRC emacs-lisp
   (use-package magit
     :bind ("C-x C-m" . magit-status))
+#+END_SRC
+
+When it comes to Emacs..I need all the help I can get.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package helpful
+    :defer
+    :bind
+    ("C-h f" . #'helpful-callable)
+    ("C-h v" . #'helpful-variable)
+    ("C-h k" . #'helpful-key))
 #+END_SRC
 
 Colorize color names in buffers.
@@ -258,12 +275,22 @@ get working as a customizable minor mode.
                     ("base0E" . "{{base0E}}")
                     ("base0F" . "{{base0F}}")))))
 #+END_SRC
+
+Fold all minor mode indicators into one with a menu.
+
+#+BEGIN_SRC emacs-lisp
+  (use-package minions
+    :config (minions-mode))
+#+END_SRC
 ** Languages
 *** yaml
 #+BEGIN_SRC emacs-lisp
   (use-package yaml-mode)
 #+END_SRC
 *** org-mode
+
+ACTN: add proper MIME file openers
+
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :custom
