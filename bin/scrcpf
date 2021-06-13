@@ -1,4 +1,0 @@
-#!/bin/sh
-
-mkdir -p ~/scr
-scrot -s ~/scr/screenshot-`date +%F_%T`.png -e 'xclip -selection clipboard -t image/png < $f'
