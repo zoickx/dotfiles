@@ -1,4 +1,25 @@
+* Notes
+** ACTN Learn about Ivy/Helm/Ido
+** ACTN Use [[https://github.com/noctuid/general.el][general]] for managing keymaps
+** ACTN Check out [[https://github.com/errata-ai/vale][vale]] and alternatives
+(in addition to / in place of LanguageTool)
+** ACTN Only start ranger on plain emacs startup
+~ranger~ currently starts even if ~emacs file.txt~ is invoked, opening on top of
+the desired file's buffer, and needs to be closed every time
 * Meta
+
+Defer garbage collection during init, as suggested [[https://github.com/nilcons/emacs-use-package-fast#a-trick-less-gc-during-startup][here]].
+Benchmarking on the config at the time this is being added:
+  - 1054ms startup time without
+  - 833ms startup time with
+Looks like a free 20% improvement to me!
+
+#+BEGIN_SRC emacs-lisp
+  (setq gc-cons-threshold 64000000)
+  (add-hook 'after-init-hook #'(lambda ()
+                                 ;; restore after startup
+                                 (setq gc-cons-threshold 800000)))
+#+END_SRC
 
 Bootstrap ~straight.el~ as instructed by [[https://github.com/raxod502/straight.el#getting-started][the docs]].
 
@@ -19,26 +40,13 @@ Bootstrap ~straight.el~ as instructed by [[https://github.com/raxod502/straight.
 
 Install [[https://github.com/jwiegley/use-package][~use-package~]], enable ~straight.el~ inegration.
 
-By default, packages through ~(use-package ...)~ will be automatically installed
-as if ~(straight-use-package ...)~ was invoked. To disable this for a specific
-package, use ~:straight nil~. (docs [[https://github.com/raxod502/straight.el#integration-with-use-package][here]])
+By default, packages enabled through ~(use-package ...)~ will be automatically
+installed as if ~(straight-use-package ...)~ was invoked. To disable this for a
+specific package, use ~:straight nil~. (docs [[https://github.com/raxod502/straight.el#integration-with-use-package][here]])
 
 #+BEGIN_SRC emacs-lisp
   (straight-use-package 'use-package)
   (setq straight-use-package-by-default t)
-#+END_SRC
-
-Defer garbage collection during init, as suggested [[https://github.com/nilcons/emacs-use-package-fast#a-trick-less-gc-during-startup][here]].
-Benchmarking on the config at the time this is being added:
-  - 1054ms startup time without
-  - 833ms startup time with
-Looks like a free 20% improvement to me!
-
-#+BEGIN_SRC emacs-lisp
-  (setq gc-cons-threshold 64000000)
-  (add-hook 'after-init-hook #'(lambda ()
-                                 ;; restore after startup
-                                 (setq gc-cons-threshold 800000)))
 #+END_SRC
 
 Emacs Start Up Profiler.
