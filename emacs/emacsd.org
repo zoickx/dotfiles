@@ -316,10 +316,64 @@ ACTN: add proper MIME file openers
                               ("JUNK" . (:foreground "black" :background "gray20"))))
 
     (org-archive-location "~/org/amygdala/org-archive.org::")
+
     (org-archive-save-context-info '(time file))
+
+    (org-link-frame-setup
+     '((vm . vm-visit-folder-other-frame)
+       (vm-imap . vm-visit-imap-folder-other-frame)
+       (gnus . org-gnus-no-new-news)
+       (file . find-file) ; open org links in the same window
+       (wl . wl-other-frame)))
 
     :bind (:map org-mode-map
                 ("C-c C-<return>" . org-todo)))
+#+END_SRC
+
+[[https://github.com/org-roam/org-roam][org-roam]]
+
+#+BEGIN_SRC emacs-lisp
+  (straight-use-package
+    '(org-roam :type git :host github :repo "org-roam/org-roam" :branch "v2"))
+
+  (setq org-roam-directory "~/org")
+  (org-roam-setup)
+
+  (use-package org-roam :disabled
+    :hook
+    (after-init . org-roam-mode)
+    :custom
+    (org-roam-directory "~/org")
+    (org-roam-graph-viewer nil)
+    :config
+    (evil-define-key '(normal visual) 'org-roam-mode-map
+      (kbd "<leader>rr") 'org-roam)
+    (evil-define-key '(normal visual) 'org-roam-mode-map
+      (kbd "<leader>rf") 'org-roam-find-file)
+    (evil-define-key '(normal visual) 'org-roam-mode-map
+      (kbd "<leader>ri") 'org-roam-insert)
+    (evil-define-key '(normal visual) 'org-roam-mode-map
+      (kbd "<leader>rI") 'org-roam-insert-immediate)
+    (evil-define-key '(normal visual) 'org-roam-mode-map
+      (kbd "<leader>rt") 'org-roam-tag-add)
+
+    (require 'org-roam-protocol))
+
+  (use-package org-roam-server :disabled
+    :commands org-roam-server-mode
+    :hook (org-roam-server-mode . server-start)
+    :custom
+    (org-roam-server-host "127.0.0.1")
+    (org-roam-server-port 8080)
+    (org-roam-server-authenticate nil)
+    (org-roam-server-export-inline-images t)
+    (org-roam-server-serve-files nil)
+    (org-roam-server-served-file-extensions '("pdf" "mp4" "ogv"))
+    (org-roam-server-network-poll t)
+    (org-roam-server-network-arrows nil)
+    (org-roam-server-network-label-truncate t)
+    (org-roam-server-network-label-truncate-length 60)
+    (org-roam-server-network-label-wrap-length 20))
 #+END_SRC
 *** markdown
 #+BEGIN_SRC emacs-lisp
@@ -335,6 +389,14 @@ ACTN: add proper MIME file openers
   (use-package centered-window
     :custom
     (cwm-centered-window-width 90))
+#+END_SRC
+*** dot
+#+BEGIN_SRC emacs-lisp
+  (use-package graphviz-dot-mode
+    :mode "\\.gv\\'"
+    :custom
+    (graphviz-dot-preview-extension "svg")
+    :hook (graphviz-dot-mode . rainbow-mode))
 #+END_SRC
 *** coq
 #+BEGIN_SRC emacs-lisp
