@@ -3,43 +3,65 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Fira Sans;
-    font-size: 14px;
-    min-height: 0;
+    font-size: 16px;
+    min-height: 28px;
 }
-
-
 
 window#waybar {
-    color: {{base04}};
-    background-color: {{base00}};
+    background-color: {{base01}};
     border-bottom: 3px solid {{base02}};
-    /*transition-property: background-color;
-    transition-duration: .5s;*/
+    color: {{base04}};
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+/* TODO: this was not a comment
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+*/
+
 #workspaces button {
-    color: {{base06}};
     padding: 0 5px;
     background-color: transparent;
+    color: {{base06}};
+    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px {{base03}};
 }
 
 #workspaces button.persistent {
-    padding: 0 5px;
-    background-color: transparent;
-    color: {{base06}};
+    background-color: {{base01}};
     box-shadow: inset 0 -3px transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     background: {{base00}};
-    box-shadow: inset 0 -3px {{base07}};
+    box-shadow: inset 0 -3px {{base05}};
 }
 
 #workspaces button.focused {
+    color: {{base07}};
     background-color: {{base02}};
-    box-shadow: inset 0 -3px {{base06}};
+    box-shadow: inset 0 -3px {{base0B}};
 }
 
 #workspaces button.urgent {
@@ -47,29 +69,9 @@ window#waybar {
 }
 
 #mode {
-    background-color: {{base02}};
-    border-bottom: 3px solid {{base06}};
+    background-color: {{base01}};
+    box-shadow: inset 0 -3px {{base09}};
 }
-
-/*
-base00
-base01
-base02
-base03
-base04
-base05
-base06
-base07
-base08
-base09
-base0A
-base0B
-base0C
-base0D
-base0E
-base0F
-*/
-
 
 #clock,
 #battery,
@@ -86,7 +88,7 @@ base0F
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
-    color: {{base04}};
+    color: {{base00}};
 }
 
 #window,
@@ -105,24 +107,27 @@ base0F
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: {{base07}};
+}
+
+#battery {
+    background-color: {{base07}};
 }
 
 #battery.charging {
-    color: {{base05}};
     background-color: {{base0B}};
 }
 
 @keyframes blink {
     to {
-        background-color: {{base05}};
+        background-color: {{base06}};
         color: {{base00}};
     }
 }
 
 #battery.critical:not(.charging) {
     background-color: {{base08}};
-    color: {{base05}};
+    color: {{base07}};
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -131,36 +136,95 @@ base0F
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: {{base00}};
+}
+
+#cpu {
+    background-color: {{base0B}};
+    color: {{base00}};
+}
+
+#memory {
+    background-color: {{base0E}};
+}
+
+#backlight {
+    background-color: {{base0C}};
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: {{base0D}};
+    color: {{base00}}
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: {{base08}};
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: {{base0A}};
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: {{base03}};
+}
+
+#custom-media {
+    background-color: {{base0B}};
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: {{base0B}};
+}
+
+#custom-media.custom-vlc {
+    background-color: {{base09}};
+}
+
+#temperature {
+    background-color: {{base0A}};
+}
+
+#temperature.critical {
+    background-color: {{base08}};
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: {{base0C}};
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: {{base01}};
+    color: {{base06}}
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: {{base07}};
+    color: {{base00}};
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language {
+    background: {{base0B}};
+    color: {{base00}};
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
 }

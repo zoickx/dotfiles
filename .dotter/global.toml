@@ -26,6 +26,44 @@ base0D = "#3971ED"
 base0E = "#A36AC7"
 base0F = "#3971ED"
 
+#[base16-theme.variables]
+#base16-theme-name = "base16-gruvbox-light-soft"
+#base00 = "#f2e5bc"
+#base01 = "#ebdbb2"
+#base02 = "#d5c4a1"
+#base03 = "#bdae93"
+#base04 = "#665c54"
+#base05 = "#504945"
+#base06 = "#3c3836"
+#base07 = "#282828"
+#base08 = "#9d0006"
+#base09 = "#af3a03"
+#base0A = "#b57614"
+#base0B = "#79740e"
+#base0C = "#427b58"
+#base0D = "#076678"
+#base0E = "#8f3f71"
+#base0F = "#d65d0e"
+
+#[base16-theme.variables]
+#base16-theme-name = "base16-dracula"
+#base00 = "#282936"
+#base01 = "#3a3c4e"
+#base02 = "#4d4f68"
+#base03 = "#626483"
+#base04 = "#62d6e8"
+#base05 = "#e9e9f4"
+#base06 = "#f1f2f8"
+#base07 = "#f7f7fb"
+#base08 = "#ea51b2"
+#base09 = "#b45bcf"
+#base0A = "#00f769"
+#base0B = "#ebff87"
+#base0C = "#a1efe4"
+#base0D = "#62d6e8"
+#base0E = "#b45bcf"
+#base0F = "#00f769"
+
 [emacs]
 depends = ["gui", "base16-theme"]
 
@@ -34,19 +72,17 @@ depends = ["gui", "base16-theme"]
 "emacs/init.el"       = "~/.config/emacs/init.el"
 "emacs/emacsd.org"    = "~/.config/emacs/emacsd.org"
 
-[i3.files]
-"i3" = "~/.config/i3/config"
-
 [sway.files]
 "sway/sway.conf" = "~/.config/sway/config"
 "sway/waybar.conf" = "~/.config/waybar/config"
 "sway/waybar.css" = "~/.config/waybar/style.css"
+"sway/mako.conf" = "~/.config/mako/config"
 
 [git]
 depends = ["global"]
 
 [git.files]
-"gitconfig" = "~/.config/git/config"
+"git.conf" = "~/.config/git/config"
 
 [zsh]
 depends = ["base16-theme"]
