@@ -12,5 +12,7 @@ AddPackage wf-recorder # Screen recorder for wlroots-based compositors such as s
 
 AddPackage --foreign sway-launcher-desktop # TUI Application launcher with Desktop Entry support.
 
+AddPackage --foreign wev # tool for debugging wayland events, similar to xev
+
 # meh
 AddPackage xorg-xwayland # run X clients under wayland

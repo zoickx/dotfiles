@@ -1,4 +1,6 @@
-## CLI utilities
+################
+## CLI
+################
 
 # u want mah files? well come and get 'em!
 AddPackage cryfs # Cryptographic filesystem for the cloud
@@ -14,13 +16,27 @@ IgnorePath '/usr/bin/mullvad-problem-report'
 IgnorePath '/usr/bin/mullvad-exclude '
 IgnorePath '/opt/Mullvad\ VPN/resources'
 
-# CLI stuffs
+# cleanup/deduplication
 AddPackage rmlint # Tool to remove duplicates and other lint, being much faster than fdupes
+AddPackage --foreign findimagedupes # Tool to find visually similar or duplicate images
+
+# etc
+AddPackage rclone # Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage
 AddPackage unarchiver # unar and lsar
+AddPackage --foreign pandoc-bin # Pandoc - executable only, without 750MB Haskell depends/makedepends
 AddPackage --foreign librespeed-cli-bin # Command line interface for LibreSpeed speed test backends
 AddPackage --foreign dotter-rs-bin # A dotfile manager and templater written in Rust
+AddPackage --foreign jmtpfs # FUSE and libmtp based filesystem for accessing MTP (Media Transfer Protocol) devices
 
-## Semi-GUI stuffs
+# TODO: auto-submit?
+AddPackage pkgstats # Submit a list of installed packages to the Arch Linux project
+
+
+
+################
+## Semi-GUI
+################
+
 AddPackage youtube-dl # A command-line program to download videos from YouTube.com and a few more sites
 AddPackage nextcloud-client # Nextcloud desktop client
 
@@ -29,27 +45,43 @@ AddPackage languagetool # An open source language checker
 AddPackage jdk-openjdk # OpenJDK Java 15 development kit
 IgnorePath "/usr/lib/jvm/default*" # let jdk handle its defaults
 
-## Actual proper GUI apps
 
-AddPackage emacs # The extensible, customizable, self-documenting real-time display editor
+
+################
+## Proper GUI
+################
+
+# basics-101
 AddPackage alacritty # A cross-platform, GPU-accelerated terminal emulator
+AddPackage --foreign emacs-gcc-wayland-devel-bin # GNU Emacs. Development native-comp branch and pgtk branch combined, served as a binary.
 
+# browsers
 AddPackage firefox # Standalone web browser from mozilla.org
 AddPackage torbrowser-launcher # Securely and easily download, verify, install, and launch Tor Browser in Linux
-CreateDir /var/lib/tor 700 tor tor
 
+# messengers
 AddPackage signal-desktop # Signal Private Messenger for Linux
 AddPackage telegram-desktop # Official Telegram Desktop client
 
+# viewers of all sorts
 AddPackage thunar # Modern file manager for Xfce
 AddPackage imv # Image viewer for Wayland and X11
 AddPackage tumbler # D-Bus service for applications to request thumbnails
-AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
+AddPackage mpv # a free, open source, and cross-platform media player
+AddPackage gthumb # Image browser and viewer for the GNOME Desktop
 
+# graphical editors
 AddPackage gimp # GNU Image Manipulation Program
 AddPackage inkscape # Professional vector graphics editor
 AddPackage --foreign losslesscut-bin # Crossplatform GUI tool for lossless trimming/cutting of video/audio files
 
+# files over networks
 AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
+AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
 
+# DHEWM
+AddPackage --foreign gzdoom # Feature centric port for all Doom engine games
+
+# trash
 AddPackage --foreign zoom # Video Conferencing and Web Conferencing Service
+AddPackage --foreign onlyoffice-bin # An office suite that combines text, spreadsheet and presentation editors

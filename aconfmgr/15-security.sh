@@ -3,8 +3,6 @@
 AddPackage clamav # Anti-virus toolkit for Unix
 # automatic virus definition updates 
 CreateLink /etc/systemd/system/multi-user.target.wants/clamav-freshclam.service /usr/lib/systemd/system/clamav-freshclam.service
-# I trust ClamAV to manage itself nicely
-IgnorePath '/var/lib/clamav/*'
 
 ## Sandboxing
 
@@ -23,3 +21,7 @@ CopyFile /etc/firejail/default.profile # enable apparmor by default
 CopyFile /etc/firejail/zoom.profile # enable apparmor, restring access to $HOME
 CopyFile /usr/bin/zoom 755 # /usr/bin/zoom calls zoom in firejail
 CreateDir /opt/zoom/home 700 zoickx zoickx # the directory zoom shall believe to be $HOME
+CreateDir /opt/zoom/home/.zoom/data 700 zoickx zoickx
+SetFileProperty /opt/zoom/home/.zoom group zoickx
+SetFileProperty /opt/zoom/home/.zoom mode 700
+SetFileProperty /opt/zoom/home/.zoom owner zoickx

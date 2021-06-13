@@ -5,3 +5,5 @@ AddPackage --foreign ghcup-hs-bin # an installer for the general purpose languag
 # Weird dependencies of (dependencies of) [Helix](https://github.com/vzaliva/helix)
 AddPackage perl-ipc-system-simple # Run commands simply, with detailed diagnostics
 AddPackage perl-string-shellquote # Quote strings for passing through the shell
+
+AddPackage docker
