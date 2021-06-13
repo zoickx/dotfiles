@@ -92,6 +92,13 @@ Set the default <number>-column-rule to 80-column-rule.
 #+BEGIN_SRC emacs-lisp
 (setq-default fill-column 80)
 #+END_SRC
+
+No warnings in native-comp emacs
+
+#+BEGIN_SRC emacs-lisp
+  (custom-set-variables
+   '(warning-suppress-types '((comp) (comp))))
+#+END_SRC
 ** Misc config
 *** GPG
 #+BEGIN_SRC emacs-lisp
