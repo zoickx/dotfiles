@@ -4,7 +4,7 @@
 
 export ZSH=~/.config/oh-my-zsh
 
-plugins=(git colored-man-pages fzf fzf-tab)
+plugins=(git colored-man-pages fzf fzf-tab docker)
 
 ZSH_THEME="lambda"
 
