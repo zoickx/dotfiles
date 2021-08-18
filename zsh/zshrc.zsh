@@ -6,8 +6,6 @@ export ZSH=~/.config/oh-my-zsh
 
 plugins=(git colored-man-pages fzf fzf-tab docker)
 
-ZSH_THEME="lambda"
-
 source $ZSH/oh-my-zsh.sh
 
 
@@ -18,6 +16,9 @@ source $ZSH/oh-my-zsh.sh
 
 # do not create ~/.lesshst
 export LESSHISTFILE="/dev/null"
+
+# [[https://starship.rs]]
+eval "$(starship init zsh)"
 
 
 
@@ -43,24 +44,6 @@ cd() { builtin cd $1 && exa --sort=type }
 alias killall="echo 'No. Use pkill instead.'"
 alias startx="echo 'Are you sure? Run [really_startx] to start X.'" #
 alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc              # Slowly migrating to Wayland...
-
-n ()
-{
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
-
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
-
-    nnn "$@"
-
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
-}
-
 
 ### base16-fzf
 ## stolen from [https://github.com/fnune/base16-fzf]

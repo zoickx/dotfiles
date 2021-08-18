@@ -1,0 +1,47 @@
+add_newline = false
+
+format = """
+($cmd_duration
+)\
+$battery\
+$character\
+$directory\
+$git_branch$git_commit$git_status
+"""
+
+[character]
+success_symbol = "[𝝺](bold green)"
+error_symbol   = "[𝝺](bold green)" # is it really that infomative?
+
+[directory]
+format = "[$read_only]($read_only_style)[$path]($style) "
+truncation_symbol = "../"
+read_only         = "🔒"
+
+[cmd_duration]
+format = "Last command took [$duration](bold yellow)."
+min_time = 10_000
+
+[git_branch]
+format = "[$branch](bold purple) "
+only_attached = true
+
+[git_commit]
+format = "[$hash](bold purple) "
+commit_hash_length = 7
+
+[git_status]
+format     = '([$staged\[$untracked$modified$renamed$deleted( $conflicted)\]](red) )'
+staged     = "."
+untracked  = "+"
+modified   = "*"
+renamed    = "~"
+deleted    = "×"
+conflicted = "!"
+
+[battery]
+format = '[\[$percentage\] ]($style)'
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
