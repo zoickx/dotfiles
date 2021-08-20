@@ -1,8 +1,9 @@
+export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
+export HISTFILE=${ZDOTDIR}/history
+
 export EDITOR=vis
 
 export PATH=~/dotfiles/bin:$PATH
-
-export PATH=~/.local/bin:$PATH
 
 export PATH=~/.cargo/bin:$PATH
 export PATH=~/.cabal/bin:$PATH

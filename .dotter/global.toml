@@ -88,8 +88,10 @@ depends = ["global"]
 depends = ["base16-theme"]
 
 [zsh.files]
-"zsh/zshrc" = "~/.zshrc"
-"zsh/zshenv" = "~/.zshenv"
+"zsh/HOME.zshenv.zsh" = "~/.zshenv"
+"zsh/zshrc.zsh" = "~/.config/zsh/.zshrc"
+"zsh/zshenv.zsh" = "~/.config/zsh/.zshenv"
+"zsh/starship.toml" = "~/.config/starship.toml"
 
 [alacritty]
 depends = ["gui", "base16-theme"]

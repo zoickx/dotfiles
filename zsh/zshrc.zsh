@@ -1,12 +1,39 @@
-#############
-### OH-MY-ZSH
-#############
+###########
+### ANTIGEN
+###########
 
-export ZSH=~/.config/oh-my-zsh
+ADOTDIR=${XDG_CONFIG_HOME}/zsh/antigen
+ANTIGEN=${ADOTDIR}/antigen.zsh
 
-plugins=(git colored-man-pages fzf fzf-tab docker)
+if [[ ! -f ${ANTIGEN} ]]; then
+    echo "Getting the Antigen ZSH plugin manager..."
+    echo "curl -L git.io/antigen -o ${ANTIGEN} --create-dirs"
+    curl -L git.io/antigen -o ${ANTIGEN} --create-dirs 
+fi
 
-source $ZSH/oh-my-zsh.sh
+typeset -a ANTIGEN_CHECK_FILES=(${ZDOTDIR}/.zshrc)
+
+source ${ANTIGEN}
+
+
+
+###########
+### PLUGINS
+###########
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle colored-man-pages
+antigen bundle fzf
+antigen bundle Aloxaf/fzf-tab
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+
+antigen apply
+
+## SKIM:
+# 1) https://github.com/Aloxaf/fzf-tab/issues/228
 
 
 
@@ -14,11 +41,11 @@ source $ZSH/oh-my-zsh.sh
 ### CONFIG
 ##########
 
-# do not create ~/.lesshst
-export LESSHISTFILE="/dev/null"
-
 # [[https://starship.rs]]
 eval "$(starship init zsh)"
+
+# do not create ~/.lesshst
+export LESSHISTFILE="/dev/null"
 
 
 
