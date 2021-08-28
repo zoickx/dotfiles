@@ -23,10 +23,12 @@ AddPackage --foreign findimagedupes # Tool to find visually similar or duplicate
 # etc
 AddPackage rclone # Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage
 AddPackage unarchiver # unar and lsar
+AddPackage gitui # Blazing fast terminal-ui for git written in Rust
 AddPackage --foreign pandoc-bin # Pandoc - executable only, without 750MB Haskell depends/makedepends
 AddPackage --foreign librespeed-cli-bin # Command line interface for LibreSpeed speed test backends
 AddPackage --foreign dotter-rs-bin # A dotfile manager and templater written in Rust
 AddPackage --foreign jmtpfs # FUSE and libmtp based filesystem for accessing MTP (Media Transfer Protocol) devices
+AddPackage --foreign inxi # Full featured CLI system information tool
 
 # TODO: auto-submit?
 AddPackage pkgstats # Submit a list of installed packages to the Arch Linux project
@@ -38,7 +40,6 @@ AddPackage pkgstats # Submit a list of installed packages to the Arch Linux proj
 ################
 
 AddPackage youtube-dl # A command-line program to download videos from YouTube.com and a few more sites
-AddPackage nextcloud-client # Nextcloud desktop client
 
 # languagetool appears to have a missing dependency for jdk
 AddPackage languagetool # An open source language checker
@@ -57,6 +58,7 @@ AddPackage --foreign emacs-gcc-wayland-devel-bin # GNU Emacs. Development native
 
 # browsers
 AddPackage firefox # Standalone web browser from mozilla.org
+AddPackage midori # Lightweight web browser
 AddPackage torbrowser-launcher # Securely and easily download, verify, install, and launch Tor Browser in Linux
 
 # messengers
@@ -69,6 +71,8 @@ AddPackage imv # Image viewer for Wayland and X11
 AddPackage tumbler # D-Bus service for applications to request thumbnails
 AddPackage mpv # a free, open source, and cross-platform media player
 AddPackage gthumb # Image browser and viewer for the GNOME Desktop
+AddPackage abiword # Fully-featured word processor
+AddPackage foliate # A simple and modern GTK eBook reader
 
 # graphical editors
 AddPackage gimp # GNU Image Manipulation Program
@@ -84,4 +88,3 @@ AddPackage --foreign gzdoom # Feature centric port for all Doom engine games
 
 # trash
 AddPackage --foreign zoom # Video Conferencing and Web Conferencing Service
-AddPackage --foreign onlyoffice-bin # An office suite that combines text, spreadsheet and presentation editors
