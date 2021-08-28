@@ -20,7 +20,9 @@ read_only         = "🔒"
 
 [cmd_duration]
 format = "Last command took [$duration](bold yellow)."
-min_time = 10_000
+min_time = 60_000
+show_notifications = true
+min_time_to_notify = 600_000
 
 [git_branch]
 format = "[$branch](bold purple) "
