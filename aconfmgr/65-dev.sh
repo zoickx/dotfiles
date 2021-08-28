@@ -6,4 +6,4 @@ AddPackage --foreign ghcup-hs-bin # an installer for the general purpose languag
 AddPackage perl-ipc-system-simple # Run commands simply, with detailed diagnostics
 AddPackage perl-string-shellquote # Quote strings for passing through the shell
 
-AddPackage docker
+AddPackage openssh # Premier connectivity tool for remote login with the SSH protocol
