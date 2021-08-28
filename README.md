@@ -1,8 +1,7 @@
-### zoickx's dotfiles
+## About
 
 [![sourcehut](https://img.shields.io/badge/origin-sourcehut-212529?link=https://git.sr.ht/~zoickx/dotfiles)](https://git.sr.ht/~zoickx/dotfiles)
 
-### About
 * [Arch Linux](https://archlinux.org/) + [aconfmgr](https://github.com/CyberShadow/aconfmgr)
   NixOS is amazing. But I just never got to the point of being able to do the
   same things with it I do on Arch. Using aconfmgr as a crutch. Hoping to get
