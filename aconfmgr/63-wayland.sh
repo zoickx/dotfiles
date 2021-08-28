@@ -1,3 +1,5 @@
+## Basics
+
 AddPackage sway # Tiling Wayland compositor and replacement for the i3 window manager
 
 AddPackage waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
@@ -14,5 +16,14 @@ AddPackage --foreign sway-launcher-desktop # TUI Application launcher with Deskt
 
 AddPackage --foreign wev # tool for debugging wayland events, similar to xev
 
-# meh
+## Rice
+
+AddPackage lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop (GTK+ 3 version)
+AddPackage arc-gtk-theme # A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell
+AddPackage papirus-icon-theme # Papirus icon theme
+
+AddPackage ttf-fira-sans # Mozilla's sans-serif typeface designed for Firefox OS
+AddPackage --foreign ttf-iosevka # the main font
+
+## meh
 AddPackage xorg-xwayland # run X clients under wayland
