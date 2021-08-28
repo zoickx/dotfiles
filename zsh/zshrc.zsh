@@ -44,6 +44,11 @@ antigen apply
 # [[https://starship.rs]]
 eval "$(starship init zsh)"
 
+
+# [[https://github.com/ajeetdsouza/zoxide]]
+eval "$(zoxide init zsh --cmd j)"
+
+
 # do not create ~/.lesshst
 export LESSHISTFILE="/dev/null"
 
@@ -55,6 +60,7 @@ export LESSHISTFILE="/dev/null"
 
 alias aura='aura --color=always'
 alias now="date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; TZ=":America/Los_Angeles" date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; echo; cal"
+alias how=tldr # tldr is just so unpleasant to type :)
 
 ### Rust fleet
 alias bat='bat --color=always'
@@ -62,15 +68,26 @@ alias ps='procs'
 alias du="dua"
 
 # Cool `ls`
-alias l="exa --all --long --time-style=long-iso --sort=type"
+alias l="exa --long --time-style=long-iso --sort=type"
+alias la="exa --all --long --time-style=long-iso --sort=type"
 alias ls="exa --sort=type"
 alias lt="exa --all --tree"
-cd() { builtin cd $1 && exa --sort=type }
+cd() { builtin cd "$@"; echo "Also try [j]!" }
+j() {
+    __zoxide_z "$@"
+    exa --long --time-style=long-iso --sort=type
+}
 
 # Unlearning commands
-alias killall="echo 'No. Use pkill instead.'"
-alias startx="echo 'Are you sure? Run [really_startx] to start X.'" #
-alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc              # Slowly migrating to Wayland...
+alias killall="echo \"No. Use [pkill] instead.\""
+alias lshw="echo -e \"No. Use [inxi -F] instead.\nlshw: 10MB, python, raw junk.\ninxi: <1MB, perl, human-readable.\""
+
+alias startx="echo \"Are you sure? Run [really_startx] to start X.\"" #
+alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc                # Slowly migrating to Wayland...
+
+alias rm="echo \"Maybe use rip instead? Run [RM] to remove\""
+alias RM=/usr/bin/rm
+
 
 ### base16-fzf
 ## stolen from [https://github.com/fnune/base16-fzf]
