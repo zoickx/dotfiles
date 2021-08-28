@@ -2,6 +2,7 @@
 
 AddPackage linux-zen # The Linux ZEN kernel and modules
 AddPackage linux-firmware # Firmware files for Linux
+AddPackage linux-zen-headers # Headers and scripts for building modules for the Linux ZEN kernel
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage efibootmgr # Linux user-space application to modify the EFI Boot Manager
 AddPackage intel-ucode # Microcode update files for Intel CPUs
