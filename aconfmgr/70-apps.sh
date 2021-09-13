@@ -8,13 +8,15 @@ AddPackage gocryptfs # Encrypted overlay filesystem written in Go.
 AddPackage veracrypt # Disk encryption with strong security based on TrueCrypt
 AddPackage --foreign srm # A secure replacement for rm(1) that overwrites data before unlinking
 
-# Mullvad kind of doesn't play well
+# # Mullvad kind of doesn't play well
 AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop
-CreateLink /etc/systemd/system/multi-user.target.wants/mullvad-daemon.service /usr/lib/systemd/system/mullvad-daemon.service
-IgnorePath '/etc/mullvad-vpn'
-IgnorePath '/usr/bin/mullvad-problem-report'
-IgnorePath '/usr/bin/mullvad-exclude '
-IgnorePath '/opt/Mullvad\ VPN/resources'
+IgnorePath '/etc/mullvad-vpn/account-history.json'
+IgnorePath '/etc/mullvad-vpn/settings.json'
+IgnorePath '/usr/bin/mullvad-exclude'
+CreateLink /etc/systemd/system/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
+CreateLink /etc/systemd/system/multi-user.target.wants/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
+CreateLink /usr/bin/mullvad-problem-report /opt/Mullvad\ VPN/resources/mullvad-problem-report
+CreateLink /usr/lib/systemd/system/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
 
 # cleanup/deduplication
 AddPackage rmlint # Tool to remove duplicates and other lint, being much faster than fdupes
