@@ -85,6 +85,3 @@ AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
 
 # DHEWM
 AddPackage --foreign gzdoom # Feature centric port for all Doom engine games
-
-# trash
-AddPackage --foreign zoom # Video Conferencing and Web Conferencing Service
