@@ -82,6 +82,3 @@ AddPackage --foreign losslesscut-bin # Crossplatform GUI tool for lossless trimm
 # files over networks
 AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
 AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
-
-# DHEWM
-AddPackage --foreign gzdoom # Feature centric port for all Doom engine games
