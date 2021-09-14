@@ -26,6 +26,7 @@ AddPackage --foreign findimagedupes # Tool to find visually similar or duplicate
 AddPackage rclone # Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage
 AddPackage unarchiver # unar and lsar
 AddPackage gitui # Blazing fast terminal-ui for git written in Rust
+AddPackage just # A handy way to save and run project-specific commands
 AddPackage --foreign pandoc-bin # Pandoc - executable only, without 750MB Haskell depends/makedepends
 AddPackage --foreign librespeed-cli-bin # Command line interface for LibreSpeed speed test backends
 AddPackage --foreign dotter-rs-bin # A dotfile manager and templater written in Rust
