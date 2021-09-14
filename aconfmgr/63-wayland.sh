@@ -22,8 +22,8 @@ AddPackage lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desk
 AddPackage arc-gtk-theme # A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell
 AddPackage papirus-icon-theme # Papirus icon theme
 
-AddPackage ttf-fira-sans # Mozilla's sans-serif typeface designed for Firefox OS
-AddPackage --foreign ttf-iosevka # the main font
+AddPackage inter-font # A typeface specially designed for user interfaces
+AddPackage ttc-iosevka # Typeface family designed for coding, terminal use and technical documents.
 
 ## meh
 AddPackage xorg-xwayland # run X clients under wayland
