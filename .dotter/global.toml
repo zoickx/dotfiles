@@ -6,6 +6,8 @@ email = "zoickx@ztld.org"
 [gui.variables]
 mono_font_family = "Iosevka"
 mono_font_size = "16.0"
+sans_font_family = "Inter"
+sans_font_size = "12.0"
 
 [base16-theme.variables]
 base16-theme-name = "base16-google-dark"
