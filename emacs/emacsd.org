@@ -1,11 +1,3 @@
-* Notes
-** ACTN Learn about Ivy/Helm/Ido
-** ACTN Use [[https://github.com/noctuid/general.el][general]] for managing keymaps
-** ACTN Check out [[https://github.com/errata-ai/vale][vale]] and alternatives
-(in addition to / in place of LanguageTool)
-** ACTN Only start ranger on plain emacs startup
-~ranger~ currently starts even if ~emacs file.txt~ is invoked, opening on top of
-the desired file's buffer, and needs to be closed every time
 * Meta
 
 Defer garbage collection during init, as suggested [[https://github.com/nilcons/emacs-use-package-fast#a-trick-less-gc-during-startup][here]].
