@@ -63,6 +63,7 @@ export SAVEHIST=$HISTSIZE
 ###########
 
 alias aura='aura --color=always'
+alias cal='cal -m'
 alias now="date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; TZ=":America/Los_Angeles" date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; echo; cal"
 alias how=tldr # tldr is just so unpleasant to type :)
 
