@@ -293,6 +293,10 @@ Fold all minor mode indicators into one with a menu.
 #+BEGIN_SRC emacs-lisp
   (use-package just-mode)
 #+END_SRC
+*** dockerfile
+#+BEGIN_SRC emacs-lisp
+  (use-package dockerfile-mode)
+#+END_SRC
 *** org-mode
 
 ACTN: add proper MIME file openers
