@@ -135,6 +135,8 @@ All the themes.
 
 #+BEGIN_SRC emacs-lisp
   (use-package evil
+    ; [https://jeffkreeftmeijer.com/emacs-evil-org-tab/]
+    :init (setq evil-want-C-i-jump nil)
     :custom
     (evil-want-abbrev-expand-on-insert-exit nil "Do not autocomplete on exiting insert mode")
     (evil-want-C-u-scroll t "C-u scrolls up")
