@@ -301,6 +301,12 @@ Fold all minor mode indicators into one with a menu.
 
 ACTN: add proper MIME file openers
 
+
+#+BEGIN_SRC emacs-lisp
+  ; disable the Emacs built-in org-mode
+  (straight-use-package '(org :type built-in) :disabled)
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
   (use-package org
     :custom
