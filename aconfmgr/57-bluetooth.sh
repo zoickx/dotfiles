@@ -3,7 +3,6 @@
 # note: bluetooth is actually managed by the [bluez] package,
 # automatically installed as a dependency of [blueman], the manager
 AddPackage blueman # GTK+ Bluetooth Manager
-AddPackage pulseaudio-bluetooth # Bluetooth support for PulseAudio
 
 # [systemctl enable bluetooth.service]
 CreateLink /etc/systemd/system/bluetooth.target.wants/bluetooth.service /usr/lib/systemd/system/bluetooth.service
