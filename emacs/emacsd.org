@@ -359,7 +359,7 @@ ACTN: add proper MIME file openers
     :config
     (org-roam-db-autosync-mode))
 #+END_SRC
-*** markdown
+*** Markdown
 #+BEGIN_SRC emacs-lisp
   (use-package markdown-mode
     :mode "\\.page\\'")
@@ -374,7 +374,7 @@ ACTN: add proper MIME file openers
     :custom
     (cwm-centered-window-width 90))
 #+END_SRC
-*** dot
+*** DOT
 #+BEGIN_SRC emacs-lisp
   (use-package graphviz-dot-mode
     :mode "\\.gv\\'"
@@ -382,7 +382,7 @@ ACTN: add proper MIME file openers
     (graphviz-dot-preview-extension "svg")
     :hook (graphviz-dot-mode . rainbow-mode))
 #+END_SRC
-*** coq
+*** Coq
 #+BEGIN_SRC emacs-lisp
   (use-package proof-general
 
@@ -411,12 +411,12 @@ ACTN: add proper MIME file openers
     :bind (:map company-coq-map
                 ("C-c d" . company-coq-diff-unification-error)))
 #+END_SRC
-*** python
+*** Python
 #+BEGIN_SRC emacs-lisp
   (use-package elpy ; python
     :hook (python-mode . elpy-enable))
 #+END_SRC
-*** haskell
+*** Haskell
 **** dante
 #+BEGIN_SRC emacs-lisp
   (use-package dante :disabled
