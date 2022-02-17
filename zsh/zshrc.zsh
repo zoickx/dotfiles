@@ -90,9 +90,6 @@ alias lshw="echo -e \"No. Use [inxi -F] instead.\nlshw: 10MB, python, raw junk.\
 alias startx="echo \"Are you sure? Run [really_startx] to start X.\"" #
 alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc                # Slowly migrating to Wayland...
 
-alias rm="echo \"Maybe use rip instead? Run [RM] to remove\""
-alias RM=/usr/bin/rm
-
 
 ### base16-fzf
 ## stolen from [https://github.com/fnune/base16-fzf]

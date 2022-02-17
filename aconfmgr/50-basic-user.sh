@@ -19,7 +19,6 @@ AddPackage procs # A modern replacement for ps written in Rust
 AddPackage starship # The cross-shell prompt for astronauts
 AddPackage zoxide # A smarter cd command for your terminal
 
-AddPackage --foreign rm-improved # Rm ImProved (rip) is a command-line deletion tool focused on safety, ergonomics, and performance. Use it as a safer alternative to rm.
 AddPackage --foreign tealdeer-bin # A fast tldr client in Rust. Static binaries from GitHub.
 AddPackage --foreign bottom-bin # A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
 
