@@ -53,7 +53,7 @@ eval "$(zoxide init zsh --cmd j)"
 export LESSHISTFILE="/dev/null"
 
 # increase ZSH history size..substantially
-export HISTSIZE=10000000
+export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 
 
