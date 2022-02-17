@@ -61,8 +61,8 @@ AddPackage --foreign emacs-gcc-wayland-devel-bin # GNU Emacs. Development native
 
 # browsers
 AddPackage firefox # Standalone web browser from mozilla.org
-AddPackage midori # Lightweight web browser
 AddPackage torbrowser-launcher # Securely and easily download, verify, install, and launch Tor Browser in Linux
+AddPackage --foreign brave-bin # Web browser that blocks ads and trackers by default (binary release)
 
 # messengers
 AddPackage signal-desktop # Signal Private Messenger for Linux
