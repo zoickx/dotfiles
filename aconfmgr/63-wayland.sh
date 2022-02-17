@@ -16,6 +16,10 @@ AddPackage --foreign sway-launcher-desktop # TUI Application launcher with Deskt
 
 AddPackage --foreign wev # tool for debugging wayland events, similar to xev
 
+# Screen sharing
+AddPackage xdg-desktop-portal # Desktop integration portals for sandboxed apps
+AddPackage xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
+
 ## Rice
 
 AddPackage lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop (GTK+ 3 version)
