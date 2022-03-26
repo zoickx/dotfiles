@@ -447,6 +447,10 @@ Stolen from [[https://github.com/vzaliva/scripts_and_configs/blob/master/configs
       (add-hook 'tuareg-mode-hook 'merlin-mode)
       (add-hook 'caml-mode-hook 'merlin-mode)))
 #+END_SRC
+*** F*
+#+BEGIN_SRC emacs-lisp
+  (use-package fstar-mode)
+#+END_SRC
 *** Python
 #+BEGIN_SRC emacs-lisp
   (use-package elpy ; python
