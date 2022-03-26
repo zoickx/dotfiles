@@ -64,6 +64,7 @@ export SAVEHIST=$HISTSIZE
 
 alias aura='aura --color=always'
 alias cal='cal -m'
+alias diff='diff --unified --color'
 alias now="date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; TZ=":America/Los_Angeles" date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; echo; cal"
 alias how=tldr # tldr is just so unpleasant to type :)
 
@@ -77,6 +78,7 @@ alias l="exa --long --time-style=long-iso --sort=type"
 alias la="exa --all --long --time-style=long-iso --sort=type"
 alias ls="exa --sort=type"
 alias lt="exa --all --tree"
+alias lt2="exa --all --tree --level=2"
 cd() { builtin cd "$@"; echo "Also try [j]!" }
 j() {
     __zoxide_z "$@"
