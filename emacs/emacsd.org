@@ -137,12 +137,19 @@ All the themes.
   (use-package evil
     ; [https://jeffkreeftmeijer.com/emacs-evil-org-tab/]
     :init (setq evil-want-C-i-jump nil)
+
     :custom
     (evil-want-abbrev-expand-on-insert-exit nil "Do not autocomplete on exiting insert mode")
     (evil-want-C-u-scroll t "C-u scrolls up")
     (evil-undo-system 'undo-tree "Use undo-tree")
+
+    ; [for evil-collection]
+    (evil-want-integration t)
+    (evil-want-keybinding nil)
+
     :bind (:map evil-normal-state-map
                 ("M-." . nil))
+
     :config
     (evil-set-leader '(normal visual) (kbd "<SPC>"))
     (require 'evil)
@@ -160,6 +167,15 @@ All the themes.
         (funcall command (prefix-numeric-value count))))
     (define-key evil-motion-state-map (kbd "k") 'my-evil-previous-line)
     (define-key evil-motion-state-map (kbd "j") 'my-evil-next-line))
+#+END_SRC
+
+More eviler.
+
+#+BEGIN_SRC emacs-lisp
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
 #+END_SRC
 
 Undo for the sane.
