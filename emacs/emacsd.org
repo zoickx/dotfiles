@@ -434,6 +434,19 @@ ACTN: add proper MIME file openers
     :bind (:map company-coq-map
                 ("C-c d" . company-coq-diff-unification-error)))
 #+END_SRC
+*** OCaml
+Stolen from [[https://github.com/vzaliva/scripts_and_configs/blob/master/configs/.emacs][vzaliva]].
+
+#+BEGIN_SRC emacs-lisp
+  (use-package tuareg
+    :config (add-to-list 'auto-mode-alist '("\\.ml\\'" . tuareg-mode)) ;Overwrite default mode for .ml which was SLIME
+    (use-package merlin
+      :bind (:map merlin-mode-map ("M-." . merlin-locate))
+      :init
+      (autoload 'merlin-mode "merlin" "Merlin mode" t)
+      (add-hook 'tuareg-mode-hook 'merlin-mode)
+      (add-hook 'caml-mode-hook 'merlin-mode)))
+#+END_SRC
 *** Python
 #+BEGIN_SRC emacs-lisp
   (use-package elpy ; python
