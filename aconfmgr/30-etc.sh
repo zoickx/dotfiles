@@ -3,9 +3,11 @@ CopyFile /etc/fstab # what to mount where
 CopyFile /etc/hostname # hostname
 CopyFile /etc/locale.gen # basically language support
 CopyFile /etc/mkinitcpio.conf # kernel modules
-IgnorePath "/etc/sudoers" # TODO: I'm starting to get doubts about the security of this
 CopyFile /etc/shells # viable shell files
 CopyFile /etc/locale.conf # set default locale
+CopyFile /etc/pacman.conf # pacman (mostly enable multilib for x32 apps (mostly steam (only steam)))
+
+IgnorePath "/etc/sudoers"
 
 CreateLink /etc/localtime /usr/share/zoneinfo/EET # timezone setting
 CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null # yes, lectured I was
