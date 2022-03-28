@@ -80,6 +80,7 @@ AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronizat
 AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
 
 # DOOMs
+AddPackage steam # Valve's digital software delivery system
 AddPackage --foreign prboom-plus # An advanced, Vanilla-compatible Doom engine based on PrBoom
 
 # etc
