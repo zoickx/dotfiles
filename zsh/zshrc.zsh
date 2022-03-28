@@ -85,10 +85,6 @@ j() {
     exa --long --time-style=long-iso --sort=type
 }
 
-# Unlearning commands
-alias killall="echo \"No. Use [pkill] instead.\""
-alias lshw="echo -e \"No. Use [inxi -F] instead.\nlshw: 10MB, python, raw junk.\ninxi: <1MB, perl, human-readable.\""
-
 alias startx="echo \"Are you sure? Run [really_startx] to start X.\"" #
 alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc                # Slowly migrating to Wayland...
 
