@@ -6,6 +6,10 @@ AddPackage --foreign aura-bin # A secure package manager for Arch Linux and the 
 AddPackage wget # Network utility to retrieve files from the Web
 AddPackage zip # Compressor/archiver for creating and modifying zipfiles
 AddPackage unzip # For extracting and viewing files in .zip archives
+AddPackage htop # Interactive process viewer
+
+AddPackage openssh # Premier connectivity tool for remote login with the SSH protocol
+AddPackage mosh # Mobile shell, surviving disconnects with local echo and line editing
 
 ## The everpresent Rust fleet
 
@@ -18,6 +22,7 @@ AddPackage hyperfine # A command-line benchmarking tool
 AddPackage procs # A modern replacement for ps written in Rust
 AddPackage starship # The cross-shell prompt for astronauts
 AddPackage zoxide # A smarter cd command for your terminal
+AddPackage hexyl # Colored command-line hex viewer
 
 AddPackage --foreign tealdeer-bin # A fast tldr client in Rust. Static binaries from GitHub.
 AddPackage --foreign bottom-bin # A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
