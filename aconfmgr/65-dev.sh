@@ -1,8 +1,3 @@
-AddPackage rustup # The Rust toolchain installer
-AddPackage opam # OCaml package manager
-AddPackage --foreign ghcup-hs-bin # an installer for the general purpose language Haskell
-AddPackage python-pip # The PyPA recommended tool for installing Python packages
-
 AddPackage llvm # Collection of modular and reusable compiler and toolchain technologies
 
 # Weird dependencies of (dependencies of) [Helix](https://github.com/vzaliva/helix)
