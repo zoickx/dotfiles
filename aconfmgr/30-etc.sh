@@ -5,7 +5,6 @@ CopyFile /etc/locale.gen # basically language support
 CopyFile /etc/mkinitcpio.conf # kernel modules
 CopyFile /etc/shells # viable shell files
 CopyFile /etc/locale.conf # set default locale
-CopyFile /etc/pacman.conf # pacman (mostly enable multilib for x32 apps (mostly steam (only steam)))
 
 IgnorePath "/etc/sudoers"
 

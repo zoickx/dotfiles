@@ -81,7 +81,6 @@ AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronizat
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
 
 # DOOMs
-AddPackage steam # Valve's digital software delivery system
 AddPackage --foreign prboom-plus # An advanced, Vanilla-compatible Doom engine based on PrBoom
 
 # etc
