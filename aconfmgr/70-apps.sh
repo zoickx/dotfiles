@@ -8,24 +8,18 @@ AddPackage gocryptfs # Encrypted overlay filesystem written in Go.
 AddPackage veracrypt # Disk encryption with strong security based on TrueCrypt
 AddPackage bitwarden-cli # The command line vault
 
-# # Mullvad kind of doesn't play well
-AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop
-IgnorePath '/etc/mullvad-vpn/account-history.json'
-IgnorePath '/etc/mullvad-vpn/settings.json'
-IgnorePath '/usr/bin/mullvad-exclude'
-CreateLink /etc/systemd/system/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
-CreateLink /etc/systemd/system/multi-user.target.wants/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
-CreateLink /usr/lib/systemd/system/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
-
 # cleanup/deduplication
 AddPackage rmlint # Tool to remove duplicates and other lint, being much faster than fdupes
 AddPackage --foreign findimagedupes # Tool to find visually similar or duplicate images
 
 # etc
+AddPackage asciinema # Record and share terminal sessions
+AddPackage gitui # Blazing fast terminal-ui for git written in Rust
+AddPackage just # A handy way to save and run project-specific commands
 AddPackage lshw # A small tool to provide detailed information on the hardware configuration of the machine.
 AddPackage rclone # Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage
 AddPackage unarchiver # unar and lsar
-AddPackage just # A handy way to save and run project-specific commands
+AddPackage libqalculate # Multi-purpose desktop calculator
 AddPackage --foreign pandoc-bin # Pandoc - executable only, without 750MB Haskell depends/makedepends
 AddPackage --foreign dotter-rs-bin # A dotfile manager and templater written in Rust
 AddPackage --foreign jmtpfs # FUSE and libmtp based filesystem for accessing MTP (Media Transfer Protocol) devices
@@ -34,14 +28,21 @@ AddPackage --foreign inxi # Full featured CLI system information tool
 # TODO: auto-submit?
 AddPackage pkgstats # Submit a list of installed packages to the Arch Linux project
 
-
-
 ################
 ## Semi-GUI
 ################
 
-AddPackage youtube-dl # A command-line program to download videos from YouTube.com and a few more sites
+AddPackage yt-dlp # A youtube-dl fork with additional features and fixes
 AddPackage --foreign noti # Monitor a process and trigger a notification
+
+# # Mullvad kind of doesn't play well
+AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop
+IgnorePath '/etc/mullvad-vpn/account-history.json'
+IgnorePath '/etc/mullvad-vpn/settings.json'
+IgnorePath '/usr/bin/mullvad-exclude'
+CreateLink /etc/systemd/system/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
+CreateLink /etc/systemd/system/multi-user.target.wants/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
+CreateLink /usr/lib/systemd/system/mullvad-daemon.service /opt/Mullvad\ VPN/resources/mullvad-daemon.service
 
 ################
 ## Proper GUI
@@ -77,7 +78,7 @@ AddPackage --foreign losslesscut-bin # Crossplatform GUI tool for lossless trimm
 
 # files over networks
 AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
-AddPackage transmission-gtk # Fast, easy, and free BitTorrent client (GTK+ GUI)
+AddPackage qbittorrent # An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
 
 # DOOMs
 AddPackage steam # Valve's digital software delivery system

@@ -7,6 +7,7 @@ AddPackage wget # Network utility to retrieve files from the Web
 AddPackage zip # Compressor/archiver for creating and modifying zipfiles
 AddPackage unzip # For extracting and viewing files in .zip archives
 AddPackage htop # Interactive process viewer
+AddPackage aria2 # Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink
 
 AddPackage openssh # Premier connectivity tool for remote login with the SSH protocol
 AddPackage mosh # Mobile shell, surviving disconnects with local echo and line editing
