@@ -16,5 +16,6 @@ CreateFile /var/db/sudo/lectured/zoickx 600 '' zoickx > /dev/null # yes, lecture
 AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 CopyFile /etc/xdg/reflector/reflector.conf # reflector config
 IgnorePath /etc/pacman.d/mirrorlist # will be auto-generated
+IgnorePath /etc/pacman.d/mirrorlist.pacnew # same
 CreateLink /etc/systemd/system/multi-user.target.wants/reflector.service /usr/lib/systemd/system/reflector.service # not sure if this is necessary at all
 CreateLink /etc/systemd/system/timers.target.wants/reflector.timer /usr/lib/systemd/system/reflector.timer # runs reflector weekly
