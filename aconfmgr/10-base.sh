@@ -40,3 +40,9 @@ AddPackage libtool # A generic library support script
 AddPackage m4 # The GNU macro processor
 AddPackage patch # A utility to apply patch files to original sources
 AddPackage pkgconf # Package compiler and linker metadata toolkit
+AddPackage archlinux-keyring # Arch Linux PGP keyring
+AddPackage bison # The GNU general-purpose parser generator
+AddPackage flex # A tool for generating text-scanning programs
+AddPackage gettext # GNU internationalization library
+AddPackage groff # GNU troff text-formatting system
+AddPackage texinfo # GNU documentation system for on-line information and printed output

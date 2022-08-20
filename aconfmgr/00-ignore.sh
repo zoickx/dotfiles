@@ -27,7 +27,7 @@ IgnorePath '/etc/.updated'
 IgnorePath '/var/.updated'
 IgnorePath '/etc/adjtime'
 IgnorePath '/etc/machine-id'
-IgnorePath '/etc/mkinitcpio.d/linux-zen.preset'
+IgnorePath '/etc/mkinitcpio.d/linux.preset'
 IgnorePath '/etc/os-release'
 IgnorePath '/lost+found'
 IgnorePath '/etc/passwd.OLD'
@@ -45,3 +45,5 @@ IgnorePath '/usr/bin/newgidmap' # these two have weird mode changes for some rea
 IgnorePath '/usr/bin/newuidmap' #
 
 IgnorePath '/usr/share/glib-2.0/*' #
+
+IgnorePath 'etc/NetworkManager/*'
