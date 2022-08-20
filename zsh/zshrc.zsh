@@ -44,10 +44,11 @@ antigen apply
 # [[https://starship.rs]]
 eval "$(starship init zsh)"
 
-
 # [[https://github.com/ajeetdsouza/zoxide]]
 eval "$(zoxide init zsh --cmd j)"
 
+# editor
+export EDITOR=vis
 
 # do not create ~/.lesshst
 export LESSHISTFILE="/dev/null"
@@ -55,6 +56,22 @@ export LESSHISTFILE="/dev/null"
 # increase ZSH history size..substantially
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
+
+## [[https://github.com/lotabout/skim]]
+export FZF_BASE=/usr/share/skim
+
+# WARN: neither of these work properly;
+#       > alias fzf=sk
+#       > fzf() { sk }
+#
+#       Instead: [ln -s /usr/bin/sk ~/.local/bin/fzf]
+
+## base16
+## stolen from [https://github.com/base16-project/base16-fzf]
+export SKIM_DEFAULT_OPTS="$SKIM_DEFAULT_OPTS"\
+" --color=bg+:{{base01}},bg:{{base00}},spinner:{{base0C}},hl:{{base0D}}"\
+" --color=fg:{{base04}},header:{{base0D}},info:{{base0A}},pointer:{{base0C}}"\
+" --color=marker:{{base0C}},fg+:{{base06}},prompt:{{base0A}},hl+:{{base0D}}"
 
 
 
@@ -73,26 +90,15 @@ alias bat='bat --color=always'
 alias ps='procs'
 alias du="dua"
 
-# Cool `ls`
+# Cool [ls]
 alias l="exa --long --time-style=long-iso --sort=type"
 alias la="exa --all --long --time-style=long-iso --sort=type"
 alias ls="exa --sort=type"
 alias lt="exa --all --tree"
 alias lt2="exa --all --tree --level=2"
-cd() { builtin cd "$@"; echo "Also try [j]!" }
+
+# Cool [cd]
 j() {
     __zoxide_z "$@"
     exa --long --time-style=long-iso --sort=type
 }
-
-alias startx="echo \"Are you sure? Run [really_startx] to start X.\"" #
-alias really_startx=/usr/bin/startx ~/dotfiles/xinitrc                # Slowly migrating to Wayland...
-
-
-### base16-fzf
-## stolen from [https://github.com/fnune/base16-fzf]
-
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:{{base01}},bg:{{base00}},spinner:{{base0C}},hl:{{base0D}}"\
-" --color=fg:{{base04}},header:{{base0D}},info:{{base0A}},pointer:{{base0C}}"\
-" --color=marker:{{base0C}},fg+:{{base06}},prompt:{{base0A}},hl+:{{base0D}}"
