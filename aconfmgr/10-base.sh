@@ -1,8 +1,8 @@
 ## The Barest Of Bones - Basically Firmware
 
-AddPackage linux-zen # The Linux ZEN kernel and modules
+AddPackage linux # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux
-AddPackage linux-zen-headers # Headers and scripts for building modules for the Linux ZEN kernel
+AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel
 AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage efibootmgr # Linux user-space application to modify the EFI Boot Manager
 AddPackage intel-ucode # Microcode update files for Intel CPUs
@@ -33,7 +33,7 @@ AddPackage wpa_supplicant # A utility providing key negotiation for WPA wireless
 AddPackage dhcpcd # RFC2131 compliant DHCP client daemon
 AddPackage ntfs-3g # NTFS filesystem driver and utilities
 
-## These from base-devel I don't quite understand, but whatever
+## These from base-devel I don't quite get, but whatever
 
 AddPackage autoconf # A GNU tool for automatically configuring source code
 AddPackage automake # A GNU tool for automatically creating Makefiles

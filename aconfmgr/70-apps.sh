@@ -32,6 +32,7 @@ AddPackage pkgstats # Submit a list of installed packages to the Arch Linux proj
 ## Semi-GUI
 ################
 
+AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
 AddPackage yt-dlp # A youtube-dl fork with additional features and fixes
 AddPackage --foreign noti # Monitor a process and trigger a notification
 
@@ -77,7 +78,6 @@ AddPackage inkscape # Professional vector graphics editor
 AddPackage --foreign losslesscut-bin # Crossplatform GUI tool for lossless trimming/cutting of video/audio files
 
 # files over networks
-AddPackage syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
 AddPackage qbittorrent # An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
 
 # DOOMs

@@ -1,6 +1,9 @@
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
 AddPackage --foreign aura-bin # A secure package manager for Arch Linux and the AUR - Prebuilt binary
 
+AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
+AddPackage vis # modern, legacy free, simple yet efficient vim-like editor
+
 ## Basics not included in base-devel for some reason
 
 AddPackage wget # Network utility to retrieve files from the Web
@@ -10,7 +13,6 @@ AddPackage htop # Interactive process viewer
 AddPackage aria2 # Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink
 
 AddPackage openssh # Premier connectivity tool for remote login with the SSH protocol
-AddPackage mosh # Mobile shell, surviving disconnects with local echo and line editing
 
 ## The everpresent Rust fleet
 
@@ -24,15 +26,6 @@ AddPackage procs # A modern replacement for ps written in Rust
 AddPackage starship # The cross-shell prompt for astronauts
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage hexyl # Colored command-line hex viewer
-
-AddPackage --foreign tealdeer-bin # A fast tldr client in Rust. Static binaries from GitHub.
-AddPackage --foreign bottom-bin # A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
-
-## unfortunately really lacks integration
-#AddPackage skim # Fuzzy Finder in rust!
-
-## QOL
-
-AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
-AddPackage vis # modern, legacy free, simple yet efficient vim-like editor
-AddPackage fzf # Command-line fuzzy finder
+AddPackage skim # Fuzzy Finder in rust!
+AddPackage tealdeer # A fast tldr client in Rust
+AddPackage bottom # A graphical process/system monitor

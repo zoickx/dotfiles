@@ -1,6 +1,6 @@
 ## Bluetooth stuffs
 
-# note: bluetooth is actually managed by the [bluez] package,
+# note: bluetooth is actually managed by [bluez],
 # automatically installed as a dependency of [blueman], the manager
 AddPackage blueman # GTK+ Bluetooth Manager
 
