@@ -1,6 +1,9 @@
 ### Dumbed down version of [usr/share/doc/alacritty/example/alacritty.yml].
 ### Only basic graphical configs present. Much more is available.
 
+window:
+  decorations: none
+
 font:
   normal:
     family: {{mono_font_family}}
