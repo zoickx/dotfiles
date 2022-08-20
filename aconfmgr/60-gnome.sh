@@ -1,12 +1,12 @@
-## Very basic Xorg for the occasional wayland-incompatible action
+## Very basic GNOME desktop for the very occasional sway-incompatible action
 
-AddPackage i3-wm # Improved dynamic tiling window manager
-AddPackage dmenu # the fancy app launcher
+AddPackage gnome-shell # Next generation desktop shell
 
+# GNOME uses wayland by default, but I might want X for..something, right?
 AddPackage xorg-server # Xorg X server
-AddPackage xorg-xinit # X.Org initialisation program # (startx)
 
-## Xorg config
+
+## Basic config for Xorg
 
 # Keyboard: us,ru,ua; shifts_toggle; ctrl swapped with caps
 CopyFile /etc/X11/xorg.conf.d/00-keyboard.conf
