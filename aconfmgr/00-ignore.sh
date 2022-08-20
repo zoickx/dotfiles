@@ -46,4 +46,4 @@ IgnorePath '/usr/bin/newuidmap' #
 
 IgnorePath '/usr/share/glib-2.0/*' #
 
-IgnorePath 'etc/NetworkManager/*'
+IgnorePath '/etc/NetworkManager/*'
