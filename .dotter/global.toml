@@ -91,6 +91,7 @@ depends = ["base16-theme"]
 
 [zsh.files]
 "zsh/HOME.zshenv.zsh" = "~/.zshenv"
+"zsh/zprofile.zsh" = "~/.config/zsh/.zprofile"
 "zsh/zshrc.zsh" = "~/.config/zsh/.zshrc"
 "zsh/zshenv.zsh" = "~/.config/zsh/.zshenv"
 "zsh/starship.toml" = "~/.config/starship.toml"
