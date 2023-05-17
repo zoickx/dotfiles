@@ -105,3 +105,9 @@ depends = ["gui", "base16-theme"]
 ## Manually symlink directory: dotter symlinks files and I don't like that
 #[aconfmgr.files]
 #aconfmgr = "~/.config/aconfmgr"
+
+[mpv]
+depends = ["gui"]
+
+[mpv.files]
+"mpv-input.conf" = "~/.config/mpv/input.conf"
