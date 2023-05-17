@@ -63,6 +63,7 @@ export FZF_BASE=/usr/share/skim
 # WARN: neither of these work properly;
 #       > alias fzf=sk
 #       > fzf() { sk }
+#       > sk $@
 #
 #       Instead: [ln -s /usr/bin/sk ~/.local/bin/fzf]
 
@@ -85,6 +86,7 @@ alias diff='diff --unified --color'
 alias now="date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; TZ=":America/Los_Angeles" date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; echo; cal"
 alias how=tldr # tldr is just so unpleasant to type :)
 alias jos=joshuto # same
+alias jmtpfs="echo Check out [android-file-transfer] instead"
 
 ### Rust fleet
 alias bat='bat --color=always'
@@ -99,7 +101,7 @@ alias lt="exa --sort=type --all --tree"
 alias lt2="exa --sort=type --all --tree --level=2"
 
 # Cool [cd]
-j() {
+j () {
     __zoxide_z "$@"
     exa --long --time-style=long-iso --sort=type
 }

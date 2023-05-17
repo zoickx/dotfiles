@@ -2,7 +2,7 @@
 ## CLI
 ################
 
-# u want mah files? well come and get 'em!
+# u want muh files? well come n get em!
 AddPackage cryfs # Cryptographic filesystem for the cloud
 AddPackage gocryptfs # Encrypted overlay filesystem written in Go.
 AddPackage veracrypt # Disk encryption with strong security based on TrueCrypt

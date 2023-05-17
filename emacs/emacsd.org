@@ -456,7 +456,7 @@ Stolen from [[https://github.com/vzaliva/scripts_and_configs/blob/master/configs
 #+END_SRC
 *** Python
 #+BEGIN_SRC emacs-lisp
-  (use-package elpy ; python
+  (use-package elpy :disabled ; python
     :hook (python-mode . elpy-enable))
 #+END_SRC
 *** Haskell
