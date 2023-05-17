@@ -27,7 +27,6 @@ base0C = "#3971ED"
 base0D = "#3971ED"
 base0E = "#A36AC7"
 base0F = "#3971ED"
-
 #[base16-theme.variables]
 #base16-theme-name = "base16-gruvbox-light-soft"
 #base00 = "#f2e5bc"
@@ -84,7 +83,8 @@ depends = ["gui", "base16-theme"]
 depends = ["global"]
 
 [git.files]
-"git.conf" = "~/.config/git/config"
+"git/git.conf" = "~/.config/git/config"
+"git/ignore" = "~/.config/git/ignore"
 
 [zsh]
 depends = ["base16-theme"]
