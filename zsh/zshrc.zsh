@@ -84,6 +84,7 @@ alias cal='cal -m'
 alias diff='diff --unified --color'
 alias now="date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; TZ=":America/Los_Angeles" date +\(%a\)\ %Y-%m-%d\ %H:%M\ %Z; echo; cal"
 alias how=tldr # tldr is just so unpleasant to type :)
+alias jos=joshuto # same
 
 ### Rust fleet
 alias bat='bat --color=always'
@@ -94,8 +95,8 @@ alias du="dua"
 alias l="exa --long --time-style=long-iso --sort=type"
 alias la="exa --all --long --time-style=long-iso --sort=type"
 alias ls="exa --sort=type"
-alias lt="exa --all --tree"
-alias lt2="exa --all --tree --level=2"
+alias lt="exa --sort=type --all --tree"
+alias lt2="exa --sort=type --all --tree --level=2"
 
 # Cool [cd]
 j() {
