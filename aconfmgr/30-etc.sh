@@ -3,7 +3,6 @@ CopyFile /etc/hostname # hostname
 CopyFile /etc/locale.gen # basically language support
 CopyFile /etc/mkinitcpio.conf # kernel modules
 CopyFile /etc/shells # viable shell files
-CopyFile /etc/locale.conf # set default locale
 
 IgnorePath "/etc/sudoers"
 
