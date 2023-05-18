@@ -13,4 +13,5 @@ AddPackage perl-string-shellquote # Quote strings for passing through the shell
 
 # etc
 AddPackage llvm # Collection of modular and reusable compiler and toolchain technologies
+AddPackage go # Core compiler tools for the Go programming language
 AddPackage drone-cli # Command line interface for Drone CI
