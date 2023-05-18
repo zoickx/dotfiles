@@ -11,6 +11,7 @@ AddPackage zip # Compressor/archiver for creating and modifying zipfiles
 AddPackage unzip # For extracting and viewing files in .zip archives
 AddPackage htop # Interactive process viewer
 AddPackage aria2 # Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink
+AddPackage rsync # A fast and versatile file copying tool for remote and local files
 
 AddPackage openssh # Premier connectivity tool for remote login with the SSH protocol
 

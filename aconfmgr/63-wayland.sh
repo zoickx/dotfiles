@@ -3,9 +3,10 @@
 AddPackage sway # Tiling Wayland compositor and replacement for the i3 window manager
 
 AddPackage waybar # Highly customizable Wayland bar for Sway and Wlroots based compositors
-AddPackage mako # Lightweight notification daemon for Wayland
 AddPackage wl-clipboard # Command-line copy/paste utilities for Wayland
+AddPackage --foreign swaync # A simple notificaion daemon with a GTK panel for checking previous notifications like other DEs
 
+AddPackage network-manager-applet # Applet for managing network connections
 AddPackage light # Program to easily change brightness on backlight-controllers.
 AddPackage gammastep # Adjust the color temperature of your screen according to your surroundings.
 AddPackage grim # Screenshot utility for Wayland
@@ -21,13 +22,13 @@ AddPackage xdg-desktop-portal # Desktop integration portals for sandboxed apps
 AddPackage xdg-desktop-portal-wlr # xdg-desktop-portal backend for wlroots
 
 ## Rice
-
-AddPackage lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop (GTK+ 3 version)
 AddPackage arc-gtk-theme # A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell
 AddPackage papirus-icon-theme # Papirus icon theme
 
 AddPackage inter-font # A typeface specially designed for user interfaces
 AddPackage ttc-iosevka # Typeface family designed for coding, terminal use and technical documents.
+
+AddPackage --foreign nwg-look-bin # GTK3 settings editor adapted to work w/ wlroots-based compositors (binary package)
 
 ## meh
 AddPackage xorg-xwayland # run X clients under wayland
