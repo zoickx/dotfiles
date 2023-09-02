@@ -46,6 +46,11 @@ eval "$(starship init zsh)"
 
 # [[https://github.com/ajeetdsouza/zoxide]]
 eval "$(zoxide init zsh --cmd j)"
+unalias j
+j () {
+    __zoxide_z "$@"
+    exa --long --time-style=long-iso --sort=type
+}
 
 # editor
 export EDITOR=vis
@@ -100,8 +105,3 @@ alias ls="exa --sort=type"
 alias lt="exa --sort=type --all --tree"
 alias lt2="exa --sort=type --all --tree --level=2"
 
-# Cool [cd]
-j () {
-    __zoxide_z "$@"
-    exa --long --time-style=long-iso --sort=type
-}
