@@ -1,3 +1,6 @@
+## Automatic login on boot (drive encrypted anyways)
+CopyFile /etc/systemd/system/getty@tty1.service.d/autologin.conf
+
 ## Basics
 
 AddPackage sway # Tiling Wayland compositor and replacement for the i3 window manager
